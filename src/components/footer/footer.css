@@ -16,6 +16,10 @@
     margin: 10px 0;
 }
 
+.footer div u {
+    margin: 0 10px;
+}
+
 .footer .heart {
     margin: 0 10px;
     color: #e25555;

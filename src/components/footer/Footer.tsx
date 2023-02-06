@@ -31,6 +31,9 @@ export default function Footer() {
           title="React"
         />
       </div>
+      <div>
+        &copy;<u>Omar Hussein</u>2023
+      </div>
     </footer>
   );
 }
