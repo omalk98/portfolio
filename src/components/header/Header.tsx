@@ -5,7 +5,7 @@ function Title() {
   return (
     <div className="head-title">
       <img
-        src="src/assets/me.png"
+        src="./me.png"
         alt="cartoon me"
         className="logo"
       />
