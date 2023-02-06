@@ -1,0 +1,30 @@
+.waving {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+}
+
+.picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px 0;
+    overflow: hidden;
+    border: solid 3px var(--font);
+}
+
+.intro-text {
+    text-align: center;
+}
+
+.into-paragraph {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
