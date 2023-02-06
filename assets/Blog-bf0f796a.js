@@ -1,1 +1,0 @@
-import{j as s}from"./index-8e0606d5.js";import{p as t}from"./blog-data-ced8a6bc.js";import{P as i}from"./PostCard-1d5d26d2.js";import"./format-date-65e0409e.js";function n({list:o}){return s.jsx("div",{children:o.map(r=>s.jsx(i,{...r},r.id))})}function p(){return s.jsxs(s.Fragment,{children:[s.jsx("h1",{children:"Blog Posts"}),s.jsx(n,{list:t})]})}export{p as default};
