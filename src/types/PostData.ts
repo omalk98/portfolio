@@ -3,6 +3,7 @@ interface PostData {
   title: string;
   text: string;
   date: Date;
+  image?: string;
 }
 
 export type { PostData };
