@@ -50,3 +50,11 @@
     border-radius: 8px;
     background: var(--bg);
 }
+
+@media screen and (max-width: 768px) {
+    .glow-card {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+}
