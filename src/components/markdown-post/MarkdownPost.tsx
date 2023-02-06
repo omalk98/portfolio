@@ -15,6 +15,7 @@ export default function MarkdownPost({ title, text, date, image }: PostData) {
         src={image}
         alt="banner"
         title="Banner"
+        loading="lazy"
         className="markdown-post-image"
       />
       <hr />

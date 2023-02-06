@@ -22,7 +22,7 @@ Here are some reasons why implementing web usability is crucial for websites:
 In conclusion, implementing web usability is crucial for websites in today's digital age. Not only does it improve the user experience, but it also enhances the brand image, increases engagement, and can lead to higher search engine rankings. Investing in web usability can pay off in the long run and help you achieve your goals.
 `,
     date: new Date(new Date('06 Feb 2023 17:14:36 GMT')),
-    image: 'web-usability.jpg'
+    image: '../web-usability.jpg'
   },
   {
     id: 12345,
@@ -66,7 +66,7 @@ MongoDB is also highly scalable and can be easily distributed across multiple se
 In conclusion, React, Redux, Node.js, Express, and MongoDB are the five most popular technologies used in full-stack web development. React provides a fast and efficient way to build user interfaces, while Redux makes it easy to manage the state of complex applications. Node.js provides a fast and scalable server-side runtime environment, while Express provides a simple and flexible way to build web applications using Node.js. Finally, MongoDB provides a scalable and flexible way to store and retrieve data in web applications.
 `,
     date: new Date('06 Feb 2023 01:31:11 GMT'),
-    image: 'mern.jpg'
+    image: '../mern.jpg'
   }
 ];
 
