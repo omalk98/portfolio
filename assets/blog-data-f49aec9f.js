@@ -14,7 +14,7 @@ Here are some reasons why implementing web usability is crucial for websites:
 5. Increased Search Engine Rankings: Implementing web usability can also improve your website's search engine rankings. Search engines consider factors such as the ease of navigation, mobile responsiveness, and page load times when determining rankings. By improving these factors, you can improve your website's visibility in search results, leading to increased traffic and potential customers.
 
 In conclusion, implementing web usability is crucial for websites in today's digital age. Not only does it improve the user experience, but it also enhances the brand image, increases engagement, and can lead to higher search engine rankings. Investing in web usability can pay off in the long run and help you achieve your goals.
-`,date:new Date(new Date("06 Feb 2023 17:14:36 GMT")),image:"./web-usability.jpg"},{id:12345,title:"Introduction to Full Stack Web Development with React, Redux, Node.js, Express, and MongoDB",text:`
+`,date:new Date(new Date("06 Feb 2023 17:14:36 GMT")),image:"../web-usability.jpg"},{id:12345,title:"Introduction to Full Stack Web Development with React, Redux, Node.js, Express, and MongoDB",text:`
 Full stack web development refers to the practice of developing both the front-end and back-end of a web application. To be a full-stack developer, you must be proficient in client-side and server-side technologies. In this article, we will discuss the five most popular technologies used in full-stack web development: React, Redux, Node.js, Express, and MongoDB.
 
 ## React
