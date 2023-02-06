@@ -13,20 +13,20 @@ export default function Footer() {
         somewhere in
         <img
           title="Canada"
-          src="./ca.svg"
+          src="ca.svg"
           alt="Canada"
         />
       </div>
       <div>
         Built with
         <img
-          src="./vite.svg"
+          src="vite.svg"
           alt="Vite"
           title="Vite"
         />
         Powered by
         <img
-          src="./react.svg"
+          src="react.svg"
           alt="React"
           title="React"
         />
