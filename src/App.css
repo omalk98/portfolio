@@ -35,7 +35,8 @@ a:visited {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-image: url(waves.svg);
+    min-height: 1100px;
+    background-image: url(/waves.svg);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -2;
