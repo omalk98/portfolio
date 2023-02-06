@@ -5,7 +5,7 @@ export default function SelfIntroduction() {
     <>
       <div className="picture">
         <img
-          src="/me.jpeg"
+          src="src/assets/me.jpeg"
           alt="my picture"
         />
       </div>
