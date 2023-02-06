@@ -16,6 +16,10 @@
   --font-dark: #fff;
   --font-light: #000;
   --green: #29fd53;
+  --red: #f44336;
+  --yellow: #ffa117;
+  --blue: #2196f3;
+  --purple: #b145e9;
 }
 
 body {

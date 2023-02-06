@@ -62,7 +62,7 @@
     height: 18px;
     border-radius: 10px;
     bottom: 10px;
-    background-color: var(--green);
+    background-image: linear-gradient(90deg, var(--yellow), var(--purple));
     transition: 0.5s;
 }
 
@@ -76,11 +76,10 @@
     transition: 0.5s;
     box-shadow: 0 0 0 0 transparent,
         0px -30px var(--green),
-        30px -12px var(--green),
-        -30px -12px var(--green),
-        25px 15px var(--green),
-        -25px 15px var(--green);
-
+        30px -12px var(--red),
+        -30px -12px var(--yellow),
+        25px 15px var(--blue),
+        -25px 15px var(--purple);
 }
 
 .navigation-bar>ul a:nth-child(2).active~.nav-indicator {
@@ -89,6 +88,12 @@
 
 .navigation-bar>ul a:nth-child(2).active~.nav-indicator::after {
     rotate: calc(360deg * 1);
+    box-shadow: 0 0 0 0 transparent,
+        -25px 15px var(--green),
+        25px 15px var(--red),
+        30px -12px var(--yellow),
+        -30px -12px var(--blue),
+        0px -30px var(--purple);
 }
 
 .navigation-bar>ul a:nth-child(3).active~.nav-indicator {
@@ -97,4 +102,10 @@
 
 .navigation-bar>ul a:nth-child(3).active~.nav-indicator::after {
     rotate: calc(360deg * 2);
+    box-shadow: 0 0 0 0 transparent,
+        25px 15px var(--green),
+        -25px 15px var(--red),
+        0px -30px var(--yellow),
+        30px -12px var(--blue),
+        -30px -12px var(--purple);
 }
