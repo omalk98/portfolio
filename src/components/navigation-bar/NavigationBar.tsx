@@ -3,12 +3,12 @@ import { Home, Projects, Blog } from '../../assets/Icons';
 import { NavItemProps, NavListProps } from '../../types/PropTypes';
 import './navigation-bar.css';
 
-function NavItem({ link, text, icon }: NavItemProps) {
+function NavItem({ link, text, icon, color }: NavItemProps) {
   const Icon = icon;
   return (
     <NavLink to={link}>
       <li title={text}>
-        <div className="nav-icon">
+        <div className={`nav-icon ${color}`}>
           <Icon />
         </div>
         <div className="nav-text">{text}</div>
@@ -35,17 +35,20 @@ const list: NavItemProps[] = [
   {
     link: '/portfolio/home',
     text: 'Home',
-    icon: Home
+    icon: Home,
+    color: 'green'
   },
   {
     link: '/portfolio/projects',
     text: 'Projects',
-    icon: Projects
+    icon: Projects,
+    color: 'red'
   },
   {
     link: '/portfolio/blog',
     text: 'Blog',
-    icon: Blog
+    icon: Blog,
+    color: 'yellow'
   }
 ];
 

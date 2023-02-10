@@ -23,7 +23,7 @@ export default function GlowCard({
         to={link}
         target={target ? '_blank' : '_self'}
       >
-        <div>{children}</div>
+        <div className="glow-card-content">{children}</div>
       </NavLink>
     </div>
   );

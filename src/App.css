@@ -53,3 +53,9 @@ a:visited {
     text-decoration: underline;
     font-size: 15pt;
 }
+
+@media screen and (max-width: 768px) {
+    .waves {
+        min-height: 800px;
+    }
+}

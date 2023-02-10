@@ -19,10 +19,12 @@ export default function MarkdownPost({ title, text, date, image }: PostData) {
         className="markdown-post-image"
       />
       <hr />
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        children={text}
-      />
+      <div className="markdown-post-content">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          children={text}
+        />
+      </div>
     </div>
   );
 }

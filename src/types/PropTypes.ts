@@ -14,6 +14,7 @@ interface NavItemProps {
   link: string;
   text: string;
   icon: Icon;
+  color: string;
 }
 
 interface NavListProps {

@@ -33,10 +33,21 @@
 }
 
 .navigation-bar>ul a.active li .nav-icon {
-    color: var(--green);
     translate: 0px -5px;
     scale: 1.2;
     margin-bottom: 5px;
+}
+
+.navigation-bar>ul a.active li .nav-icon.green {
+    color: var(--green);
+}
+
+.navigation-bar>ul a.active li .nav-icon.yellow {
+    color: var(--yellow);
+}
+
+.navigation-bar>ul a.active li .nav-icon.red {
+    color: var(--red);
 }
 
 .navigation-bar>ul a.active li .nav-text {
@@ -62,7 +73,7 @@
     height: 18px;
     border-radius: 10px;
     bottom: 10px;
-    background-image: linear-gradient(90deg, var(--yellow), var(--purple));
+    background-image: linear-gradient(90deg, var(--purple), var(--yellow));
     transition: 0.5s;
 }
 
@@ -86,6 +97,10 @@
     translate: calc(91px * 1) 0;
 }
 
+.navigation-bar>ul a:nth-child(2).active~.nav-indicator::before {
+    background-image: linear-gradient(90deg, var(--yellow), var(--blue));
+}
+
 .navigation-bar>ul a:nth-child(2).active~.nav-indicator::after {
     rotate: calc(360deg * 1);
     box-shadow: 0 0 0 0 transparent,
@@ -98,6 +113,10 @@
 
 .navigation-bar>ul a:nth-child(3).active~.nav-indicator {
     translate: calc(91px * 2) 0;
+}
+
+.navigation-bar>ul a:nth-child(3).active~.nav-indicator::before {
+    background-image: linear-gradient(90deg, var(--blue), var(--red));
 }
 
 .navigation-bar>ul a:nth-child(3).active~.nav-indicator::after {

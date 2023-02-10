@@ -32,7 +32,7 @@ export default function Footer() {
         />
       </div>
       <div>
-        &copy;<u>Omar Hussein</u>2023
+        &copy; 2023 <u>Omar Hussein</u>
       </div>
     </footer>
   );
