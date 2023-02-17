@@ -1,0 +1,18 @@
+.project-card-title {
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-card-date {
+    float: right;
+    margin: 0 5px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@media screen and (max-width: 768px) {
+    .project-card-title {
+        max-width: 300px;
+    }
+}

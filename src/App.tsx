@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <div className="App App-dark">
+      <div className="App">
         <BrowserRouter>
           <Suspense fallback={<Loader />}>
             <Header />

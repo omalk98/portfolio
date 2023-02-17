@@ -5,8 +5,9 @@ function Title() {
   return (
     <div className="head-title">
       <img
-        src="me.png"
+        src="images/me.png"
         alt="cartoon me"
+        loading="lazy"
         className="logo"
       />
       <span className="head-text">Omar Hussein</span>

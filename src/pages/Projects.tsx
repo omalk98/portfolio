@@ -1,13 +1,13 @@
-import PostCard from '../components/post-card/PostCard';
+import ProjectCard from '../components/project-card/ProjectCard';
 import projects from '../assets/project-data';
-import { PostProps } from '../types/PropTypes';
+import { ProjectProps } from '../types/PropTypes';
 
-function ProjectPosts({ list }: PostProps) {
+function ProjectPosts({ list }: ProjectProps) {
   return (
     <div>
       {list.map((post) => (
-        <PostCard
-          key={post.id}
+        <ProjectCard
+          key={post.link}
           {...post}
           target
         />

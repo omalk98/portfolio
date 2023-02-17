@@ -11,23 +11,24 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --bg-dark: #1f303f;
-  --bg-light: #e0e0e0;
-  --font-dark: #fff;
-  --font-light: #000;
+  --bg: #1f303f;
+  --font: #fff;
   --green: #29fd53;
   --red: #f44336;
-  --yellow: #ffa117;
+  --orange: #ffa117;
   --blue: #2196f3;
-  --purple: #b145e9;
+  --magenta: #b145e9;
+  --yellow: #eac33c;
+  --purple: #5d00e0;
+  --pink: #b728a3;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--bg-dark);
-  color: var(--font-dark);
+  background-color: var(--bg);
+  color: var(--font);
 }
 
 code {

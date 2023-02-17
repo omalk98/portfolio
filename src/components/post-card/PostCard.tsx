@@ -1,7 +1,7 @@
-import GlowCard from '../glow-card/GlowCard';
+import ShiftBackgroundCard from '../shift-background-card/ShiftBackgroundCard';
 import { PostCardProps } from '../../types/PropTypes';
-import './post-card.css';
 import formatDate from '../../utilities/format-date';
+import './post-card.css';
 
 export default function PostCard({
   id,
@@ -11,16 +11,16 @@ export default function PostCard({
   target = false
 }: PostCardProps) {
   return (
-    <GlowCard
+    <ShiftBackgroundCard
       link={id.toString()}
       title={title}
       target={target}
     >
-      <h3 className="blog-post-card-title">{title}</h3>
-      <p className="blog-post-card-text">{`${text.slice(0, 190)}${
+      <h3 className="post-card-title">{title}</h3>
+      <p className="post-card-text">{`${text.slice(0, 190)}${
         text.length > 190 ? '...' : ''
       }`}</p>
-      <span className="blog-post-card-date">{formatDate(date)}</span>
-    </GlowCard>
+      <span className="post-card-date">{formatDate(date)}</span>
+    </ShiftBackgroundCard>
   );
 }

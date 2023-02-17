@@ -42,8 +42,8 @@
     color: var(--green);
 }
 
-.navigation-bar>ul a.active li .nav-icon.yellow {
-    color: var(--yellow);
+.navigation-bar>ul a.active li .nav-icon.orange {
+    color: var(--orange);
 }
 
 .navigation-bar>ul a.active li .nav-icon.red {
@@ -51,7 +51,7 @@
 }
 
 .navigation-bar>ul a.active li .nav-text {
-    color: var(--font-light);
+    color: #000;
     opacity: 1;
 }
 
@@ -73,8 +73,9 @@
     height: 18px;
     border-radius: 10px;
     bottom: 10px;
-    background-image: linear-gradient(90deg, var(--purple), var(--yellow));
+    background-image: linear-gradient(90deg, var(--magenta), var(--orange));
     transition: 0.5s;
+    box-shadow: 0 3px 8px 0 #000;
 }
 
 .navigation-bar>ul .nav-indicator::after {
@@ -88,9 +89,9 @@
     box-shadow: 0 0 0 0 transparent,
         0px -30px var(--green),
         30px -12px var(--red),
-        -30px -12px var(--yellow),
+        -30px -12px var(--orange),
         25px 15px var(--blue),
-        -25px 15px var(--purple);
+        -25px 15px var(--magenta);
 }
 
 .navigation-bar>ul a:nth-child(2).active~.nav-indicator {
@@ -98,7 +99,7 @@
 }
 
 .navigation-bar>ul a:nth-child(2).active~.nav-indicator::before {
-    background-image: linear-gradient(90deg, var(--yellow), var(--blue));
+    background-image: linear-gradient(90deg, var(--orange), var(--blue));
 }
 
 .navigation-bar>ul a:nth-child(2).active~.nav-indicator::after {
@@ -106,9 +107,9 @@
     box-shadow: 0 0 0 0 transparent,
         -25px 15px var(--green),
         25px 15px var(--red),
-        30px -12px var(--yellow),
+        30px -12px var(--orange),
         -30px -12px var(--blue),
-        0px -30px var(--purple);
+        0px -30px var(--magenta);
 }
 
 .navigation-bar>ul a:nth-child(3).active~.nav-indicator {
@@ -124,7 +125,7 @@
     box-shadow: 0 0 0 0 transparent,
         25px 15px var(--green),
         -25px 15px var(--red),
-        0px -30px var(--yellow),
+        0px -30px var(--orange),
         30px -12px var(--blue),
-        -30px -12px var(--purple);
+        -30px -12px var(--magenta);
 }

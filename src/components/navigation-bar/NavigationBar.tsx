@@ -48,7 +48,7 @@ const list: NavItemProps[] = [
     link: '/portfolio/blog',
     text: 'Blog',
     icon: Blog,
-    color: 'yellow'
+    color: 'orange'
   }
 ];
 
