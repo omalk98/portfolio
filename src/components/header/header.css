@@ -27,23 +27,24 @@
     align-items: center;
     border: solid 2px var(--blue);
     border-radius: 20px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.header .download-resume>span:hover {
-    background-color: var(--blue);
-    color: #000;
-    box-shadow: 0 3px 10px 0 #000;
+    transition: scale 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .header .download-resume>span>svg {
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 .logo {
     width: 70px;
     height: 70px;
     margin: 0 10px;
+}
+
+.header .download-resume:hover>span {
+    background-color: var(--blue);
+    color: #000;
+    box-shadow: 0 3px 10px 0 #000;
+    scale: 1.1;
 }
 
 @media screen and (max-width: 768px) {
