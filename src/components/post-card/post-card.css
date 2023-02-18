@@ -11,6 +11,10 @@
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.post-card-text {
+    text-shadow: 0 3px 5px #000;
+}
+
 @media screen and (max-width: 768px) {
     .post-card-title {
         max-width: 300px;

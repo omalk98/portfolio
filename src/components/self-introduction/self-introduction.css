@@ -4,7 +4,7 @@
     margin: 0 5px;
 }
 
-.picture {
+.intro-picture {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -17,13 +17,18 @@
     text-align: center;
 }
 
-.into-paragraph {
+.intro-paragraph {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    text-shadow: 0 3px 5px #000;
 }
 
-.picture img {
+.intro-paragraph svg {
+    margin: 0 5px;
+}
+
+.intro-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
