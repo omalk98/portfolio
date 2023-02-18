@@ -16,6 +16,30 @@
     margin-top: 25px;
 }
 
+.header .resume {
+    margin-top: -15px;
+    display: flex;
+    align-items: center;
+}
+
+.header .download-resume>span {
+    display: flex;
+    align-items: center;
+    border: solid 2px var(--blue);
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.header .download-resume>span:hover {
+    background-color: var(--blue);
+    color: #000;
+    box-shadow: 0 3px 10px 0 #000;
+}
+
+.header .download-resume>span>svg {
+    margin: 0 5px;
+}
+
 .logo {
     width: 70px;
     height: 70px;
@@ -30,5 +54,9 @@
 
     .header>.head-title {
         justify-content: center;
+    }
+
+    .header .resume {
+        margin: 20px 0;
     }
 }

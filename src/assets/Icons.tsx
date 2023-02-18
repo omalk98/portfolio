@@ -4,7 +4,9 @@ import {
   BsCodeSlash,
   BsSun,
   BsMoonStars,
-  BsFillSuitHeartFill
+  BsFillSuitHeartFill,
+  BsCloudDownload,
+  BsFillFilePdfFill
 } from 'react-icons/bs';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
@@ -21,5 +23,7 @@ export {
   FaGithub as Github,
   FaLinkedin as Linkedin,
   FaInstagram as Instagram,
-  BiMailSend as Email
+  BiMailSend as Email,
+  BsCloudDownload as Download,
+  BsFillFilePdfFill as PDF
 };
