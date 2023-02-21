@@ -20,7 +20,7 @@ function Resume() {
   return (
     <div className="resume">
       <a
-        href="resume.pdf"
+        href="/portfolio/resume.pdf"
         download="Omar-Hussein_resume.pdf"
         className="download-resume"
         title="Download Resume"
