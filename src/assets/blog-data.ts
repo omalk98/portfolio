@@ -9,9 +9,9 @@ Audio is a crucial component in any multimedia presentation, whether it be a vid
 
 Can you hear the difference between these two tracks? (Use headphones for best results)
 #### High Quality WAV Stereo Track
-![Track Stereo](../audio/calm.wav)
+![Track Stereo](/portfolio/audio/calm.wav)
 #### Low Quality MP3 Mono Track
-![Track Mono](../audio/calm-mono.mp3)
+![Track Mono](/portfolio/audio/calm-mono.mp3)
 
 As you might be able to hear, the quality of the audio can have a significant impact on the user experience, bad quality audio can be distracting and annoying, while high quality audio can enhance the user's feeling of immersion.
 
@@ -51,15 +51,15 @@ Let's take a look at a few examples of how audio is used in different industries
 2. Video Production: In video production, audio is used to create a mood or atmosphere that complements the visuals. Music, sound effects, and voiceovers are all important considerations in creating a successful video. For example, a horror movie may use creepy music and eerie sound effects to heighten the suspense.
 
 3. Gaming: In gaming, audio is used to create a sense of immersion and provide feedback to the player. Sound effects can help to indicate that a player has successfully completed a task, while music can create a sense of tension or excitement. For example, in the game "Fortnite," the sound of a player's footsteps can indicate the presence of an opponent. And in Mortal Kombat, the classic **"FINISH HIM!"** and **"FATALITY!"** phrases signify a victorious win for the player.
-![Mortal Kombat](../audio/finish-him.mp3)
-![Mortal Kombat](../audio/fatality.mp3)
+![Mortal Kombat](/portfolio/audio/finish-him.mp3)
+![Mortal Kombat](/portfolio/audio/fatality.mp3)
 
 ## Conclusion
 
 Audio plays a vital role in user experience and multimedia presentations. It can enhance the user's feeling of immersion, provide feedback, and create a mood or atmosphere that complements the visuals. When designing a product or service, it is important to consider the role of audio and choose the appropriate format to deliver an optimal and high-quality user experience.
     `,
     date: new Date('16 Feb 2023 20:24:56 GMT'),
-    image: '../images/studio.jpg'
+    image: '/portfolio/images/studio.jpg'
   },
   {
     id: 358745,
@@ -78,13 +78,13 @@ Images can also help to create a consistent look and feel for a product or servi
 When it comes to images in user interfaces, the file format is just as important as the image itself. Different file formats have different properties that affect the way an image is displayed on a screen. The most common image file formats for the web are JPEG, PNG, and GIF.
 
 1. JPEG (Joint Photographic Experts Group) is a lossy compression format that is best suited for photographs and images with many colors. It uses a mathematical formula to remove redundant information, resulting in smaller file sizes.
-![JPEG](../images/trash-monster.jpeg)
+![JPEG](/portfolio/images/trash-monster.jpeg)
 
 2. PNG (Portable Network Graphics) is a lossless compression format that is best suited for graphics and images with limited colors. It uses a different mathematical formula to compress images, resulting in larger file sizes but preserving the image quality. It can also retain transparency, which is useful for cases which the image would like to blend better with the background.
-![PNG](../images/shrek.png)
+![PNG](/portfolio/images/shrek.png)
 
 3. GIF (Graphics Interchange Format) is an 8-bit format that is best suited for animated images. It uses a limited color palette, so it is not recommended for photographs or images with many colors.
-![GIF](../images/thumbs-up.gif)
+![GIF](/portfolio/images/thumbs-up.gif)
 
 ## File Size and User Experience
 
@@ -101,7 +101,7 @@ However, images and multimedia can also have negative effects on the user experi
 In conclusion, images play a critical role in the design of user interfaces, and it is important to consider the file format and file size when
 `,
     date: new Date(new Date('10 Feb 2023 02:20:56 GMT')),
-    image: '../images/happy-squirrel.png'
+    image: '/portfolio/images/happy-squirrel.png'
   },
   {
     id: 434562,
@@ -124,7 +124,7 @@ Here are some reasons why implementing web usability is crucial for websites:
 In conclusion, implementing web usability is crucial for websites in today's digital age. Not only does it improve the user experience, but it also enhances the brand image, increases engagement, and can lead to higher search engine rankings. Investing in web usability can pay off in the long run and help you achieve your goals.
 `,
     date: new Date(new Date('06 Feb 2023 17:14:36 GMT')),
-    image: '../images/web-usability.jpg'
+    image: '/portfolio/images/web-usability.jpg'
   },
   {
     id: 12345,
@@ -168,7 +168,7 @@ MongoDB is also highly scalable and can be easily distributed across multiple se
 In conclusion, React, Redux, Node.js, Express, and MongoDB are the five most popular technologies used in full-stack web development. React provides a fast and efficient way to build user interfaces, while Redux makes it easy to manage the state of complex applications. Node.js provides a fast and scalable server-side runtime environment, while Express provides a simple and flexible way to build web applications using Node.js. Finally, MongoDB provides a scalable and flexible way to store and retrieve data in web applications.
 `,
     date: new Date('06 Feb 2023 01:31:11 GMT'),
-    image: '../images/mern.jpg'
+    image: '/portfolio/images/mern.jpg'
   }
 ];
 
