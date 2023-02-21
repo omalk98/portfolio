@@ -59,7 +59,7 @@ Let's take a look at a few examples of how audio is used in different industries
 Audio plays a vital role in user experience and multimedia presentations. It can enhance the user's feeling of immersion, provide feedback, and create a mood or atmosphere that complements the visuals. When designing a product or service, it is important to consider the role of audio and choose the appropriate format to deliver an optimal and high-quality user experience.
     `,
     date: new Date('16 Feb 2023 20:24:56 GMT'),
-    image: '../images/audio.png'
+    image: '../images/studio.jpg'
   },
   {
     id: 358745,
