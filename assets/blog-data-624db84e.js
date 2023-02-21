@@ -51,7 +51,7 @@ Let's take a look at a few examples of how audio is used in different industries
 ## Conclusion
 
 Audio plays a vital role in user experience and multimedia presentations. It can enhance the user's feeling of immersion, provide feedback, and create a mood or atmosphere that complements the visuals. When designing a product or service, it is important to consider the role of audio and choose the appropriate format to deliver an optimal and high-quality user experience.
-    `,date:new Date("16 Feb 2023 20:24:56 GMT"),image:"../images/audio.png"},{id:358745,title:"Images, Formats, and File Sizes in Multimedia",text:`
+    `,date:new Date("16 Feb 2023 20:24:56 GMT"),image:"../images/studio.jpg"},{id:358745,title:"Images, Formats, and File Sizes in Multimedia",text:`
 Images play a crucial role in the design of user interfaces. Take the Image at the top of this post, seems quite strange but eye catching, isn't it? They add visual interest, convey information and emotions, and help users understand the purpose of a product or service, which is why the squirrel is so happy to see multimedia and images on its screen! With the rise of digital technologies, images have become even more important as they are now an integral part of the user experience. In this blog post, we will discuss the importance of images in user interfaces, the different image file formats, and how file size affects the user experience.
 
 ## The Importance of Images in User Interfaces
