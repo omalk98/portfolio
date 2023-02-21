@@ -15,7 +15,8 @@ import {
   Ubuntu,
   PopOS,
   Go,
-  Rust
+  Rust,
+  SpringBoot
 } from '../../assets/Icons';
 import './self-introduction.css';
 
@@ -59,8 +60,11 @@ export default function SelfIntroduction() {
           <br />
           <br />
           Java <Java title="Java" /> is my favorite OOP language for robust
-          application and server development. Hoping to learn GO
-          <Go title="Go" />
+          application and server development and Spring Boot
+          <SpringBoot title="Spring Boot" /> provides a robust interface for
+          dealing with server side management. I'm also hoping to learn GO
+          <Go title="Go" /> for server applications and robust concurrent
+          systems.
           <br />
           <br />
           C <C title="C Language" /> &amp; C++ <CPP title="C++" /> are my

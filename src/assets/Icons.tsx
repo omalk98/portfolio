@@ -23,7 +23,8 @@ import {
   SiUbuntu,
   SiPopos,
   SiRust,
-  SiGo
+  SiGo,
+  SiSpringboot
 } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { BiMailSend, BiNetworkChart, BiMicrochip } from 'react-icons/bi';
@@ -59,5 +60,6 @@ export {
   SiUbuntu as Ubuntu,
   SiPopos as PopOS,
   SiRust as Rust,
-  SiGo as Go
+  SiGo as Go,
+  SiSpringboot as SpringBoot
 };
