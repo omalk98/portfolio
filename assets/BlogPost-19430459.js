@@ -1,4 +1,4 @@
-import{g as mi,c as zn,j as ln,u as gi}from"./index-d37d8343.js";import{p as di}from"./blog-data-b6a3c6d5.js";import{f as yi}from"./format-date-65e0409e.js";const lt=["http","https","mailto","tel"];function xi(n){const e=(n||"").trim(),t=e.charAt(0);if(t==="#"||t==="/")return e;const r=e.indexOf(":");if(r===-1)return e;let i=-1;for(;++i<lt.length;){const l=lt[i];if(r===l.length&&e.slice(0,l.length).toLowerCase()===l)return e}return i=e.indexOf("?"),i!==-1&&r>i||(i=e.indexOf("#"),i!==-1&&r>i)?e:"javascript:void(0)"}/*!
+import{g as mi,c as zn,j as ln,u as gi}from"./index-cb58d59f.js";import{p as di}from"./blog-data-b6a3c6d5.js";import{f as yi}from"./format-date-65e0409e.js";const lt=["http","https","mailto","tel"];function xi(n){const e=(n||"").trim(),t=e.charAt(0);if(t==="#"||t==="/")return e;const r=e.indexOf(":");if(r===-1)return e;let i=-1;for(;++i<lt.length;){const l=lt[i];if(r===l.length&&e.slice(0,l.length).toLowerCase()===l)return e}return i=e.indexOf("?"),i!==-1&&r>i||(i=e.indexOf("#"),i!==-1&&r>i)?e:"javascript:void(0)"}/*!
  * Determine if an object is a Buffer
  *
  * @author   Feross Aboukhadijeh <https://feross.org>
