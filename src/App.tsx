@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 const AppRouter = lazy(() => import('./AppRouter'));
@@ -7,6 +7,16 @@ const Footer = lazy(() => import('./components/footer/Footer'));
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    if (import.meta.env.VITE_MAILER_URL)
+      fetch(import.meta.env.VITE_MAILER_URL, {
+        method: 'GET',
+        headers: {
+          Authorization: import.meta.env.VITE_AUTHORIZATION,
+          'Content-Type': 'application/json'
+        }
+      });
+  }, []);
   return (
     <>
       <div className="App">
