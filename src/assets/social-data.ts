@@ -20,7 +20,7 @@ const socialLinks: SocialLink[] = [
   {
     Icon: Email,
     name: 'Email',
-    link: 'mailto:omarmohammad1951@gmail.com'
+    link: 'mailto:omalk98@proton.me'
   }
 ];
 
