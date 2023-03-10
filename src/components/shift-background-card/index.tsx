@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { BasicCardProps } from '../../types/PropTypes';
 import './shift-background-card.css';
 
 export default function ShiftBackgroundCard({

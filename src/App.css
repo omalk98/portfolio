@@ -32,17 +32,6 @@ a:visited {
     bottom: 0;
 }
 
-.my-social-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    font-weight: 700;
-    text-decoration: underline;
-    font-size: 15pt;
-}
-
 @media screen and (max-width: 768px) {
     .waves {
         min-height: 800px;

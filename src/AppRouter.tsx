@@ -1,10 +1,10 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Loader from './components/loader/Loader';
-const Home = lazy(() => import('./pages/Home'));
-const Blog = lazy(() => import('./pages/Blog'));
-const Projects = lazy(() => import('./pages/Projects'));
-const BlogPost = lazy(() => import('./pages/BlogPost'));
+import Loader from './components/loader';
+const Home = lazy(() => import('./pages/home'));
+const Blog = lazy(() => import('./pages/blog'));
+const Projects = lazy(() => import('./pages/projects'));
+const BlogPost = lazy(() => import('./pages/blog-post'));
 
 export default function AppRouter() {
   return (

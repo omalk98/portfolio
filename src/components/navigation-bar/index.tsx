@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import { Home, Projects, Blog } from '../../assets/Icons';
-import { NavItemProps, NavListProps } from '../../types/PropTypes';
 import './navigation-bar.css';
 
 function NavItem({ link, text, icon, color }: NavItemProps) {

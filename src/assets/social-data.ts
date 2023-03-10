@@ -1,4 +1,3 @@
-import { SocialLink } from '../types/SocialLink';
 import { Github, Linkedin, Instagram, Email } from './Icons';
 
 const socialLinks: SocialLink[] = [

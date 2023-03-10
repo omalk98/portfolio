@@ -1,4 +1,5 @@
-import NavigationBar from '../navigation-bar/NavigationBar';
+import NavigationBar from '../navigation-bar';
+import SocialMediaLinks from '../social-media-links';
 import { Download, PDF } from '../../assets/Icons';
 import './header.css';
 
@@ -11,7 +12,10 @@ function Title() {
         loading="lazy"
         className="logo"
       />
-      <span className="head-text">Omar Hussein</span>
+      <span className="head-text">
+        Omar Hussein
+        <SocialMediaLinks />
+      </span>
     </div>
   );
 }

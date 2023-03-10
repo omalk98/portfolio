@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { BasicCardProps } from '../../types/PropTypes';
 import './border-glow-card.css';
 
 export default function BorderGlowCard({

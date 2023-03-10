@@ -1,5 +1,3 @@
-import { ProjectData } from '../types/ProjectData';
-
 const projects: ProjectData[] = [
   {
     link: 'https://crystalbox.herokuapp.com',

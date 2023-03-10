@@ -1,4 +1,5 @@
 import { Love } from '../../assets/Icons';
+import SocialMediaLinks from '../social-media-links';
 import './footer.css';
 
 export default function Footer() {
@@ -34,6 +35,7 @@ export default function Footer() {
           loading="lazy"
         />
       </div>
+      <SocialMediaLinks />
       <div>
         &copy; 2023 <u>Omar Hussein</u>
       </div>

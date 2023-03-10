@@ -1,6 +1,5 @@
-import posts from '../assets/blog-data';
-import PostCard from '../components/post-card/PostCard';
-import { PostProps } from '../types/PropTypes';
+import posts from '../assets/blogs';
+import { PostCard } from '../components';
 
 function BlogPosts({ list }: PostProps) {
   return (

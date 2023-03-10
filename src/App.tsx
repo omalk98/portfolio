@@ -1,9 +1,9 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Loader from './components/loader/Loader';
+import Loader from './components/loader';
 const AppRouter = lazy(() => import('./AppRouter'));
-const Header = lazy(() => import('./components/header/Header'));
-const Footer = lazy(() => import('./components/footer/Footer'));
+const Header = lazy(() => import('./components/header'));
+const Footer = lazy(() => import('./components/footer'));
 import './App.css';
 
 function App() {

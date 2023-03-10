@@ -1,5 +1,4 @@
-import BorderGlowCard from '../border-glow-card/BorderGlowCard';
-import { ProjectCardProps } from '../../types/PropTypes';
+import BorderGlowCard from '../border-glow-card';
 import './project-card.css';
 import formatDate from '../../utilities/format-date';
 

@@ -1,5 +1,4 @@
-import ShiftBackgroundCard from '../shift-background-card/ShiftBackgroundCard';
-import { PostCardProps } from '../../types/PropTypes';
+import ShiftBackgroundCard from '../shift-background-card';
 import formatDate from '../../utilities/format-date';
 import './post-card.css';
 
@@ -8,6 +7,7 @@ export default function PostCard({
   title,
   text,
   date,
+  image,
   target = false
 }: PostCardProps) {
   return (
@@ -16,10 +16,15 @@ export default function PostCard({
       title={title}
       target={target}
     >
-      <h3 className="post-card-title">{title}</h3>
-      <p className="post-card-text">{`${text.slice(0, 190)}${
-        text.length > 190 ? '...' : ''
-      }`}</p>
+      <div className="post-card-header">
+        <h3>{title}</h3>
+        <img
+          src={image}
+          alt="banner"
+          loading="lazy"
+        />
+      </div>
+      <p>{`${text.slice(0, 190)}${text.length > 190 ? '...' : ''}`}</p>
       <span className="post-card-date">{formatDate(date)}</span>
     </ShiftBackgroundCard>
   );

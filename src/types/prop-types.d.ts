@@ -1,9 +1,3 @@
-import { ReactNode } from 'react';
-import { Icon } from '../assets/Icons';
-import { PostData } from './PostData';
-import { ProjectData } from './ProjectData';
-import { SocialLink } from './SocialLink';
-
 interface ProjectCardProps extends ProjectData {
   target?: boolean;
 }
@@ -39,14 +33,3 @@ interface BasicCardProps {
   link: string;
   target?: boolean;
 }
-
-export type {
-  ProjectCardProps,
-  ProjectProps,
-  PostCardProps,
-  PostProps,
-  NavItemProps,
-  NavListProps,
-  SocialIconProps,
-  BasicCardProps
-};

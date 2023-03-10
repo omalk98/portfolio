@@ -1,7 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import formatDate from '../../utilities/format-date';
-import { PostData } from '../../types/PostData';
 import MediaTypes from '../../assets/media-types';
 import './markdown-post.css';
 

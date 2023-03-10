@@ -1,6 +1,5 @@
-import ProjectCard from '../components/project-card/ProjectCard';
 import projects from '../assets/project-data';
-import { ProjectProps } from '../types/PropTypes';
+import { ProjectCard } from '../components';
 
 function ProjectPosts({ list }: ProjectProps) {
   return (

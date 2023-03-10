@@ -1,4 +1,3 @@
-import { SocialIconProps } from '../../types/PropTypes';
 import socialLinks from '../../assets/social-data';
 import './social-media-links.css';
 
