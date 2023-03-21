@@ -30,6 +30,8 @@
 .markdown-post-content img,
 .markdown-post-content audio,
 .markdown-post-content video {
+    min-width: 200px;
+    min-height: 40px;
     width: 100%;
     height: auto;
 }
