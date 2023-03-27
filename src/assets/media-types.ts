@@ -19,7 +19,8 @@ const video: Array<string> = [
   'vp9',
   '3gp',
   'm4a',
-  'webm'
+  'webm',
+  'ogv'
 ];
 
 const MediaTypes = {
