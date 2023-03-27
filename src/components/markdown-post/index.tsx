@@ -29,7 +29,7 @@ function RenderMedia({ src, alt, title }: any) {
         playsInline
         webkit-playsinline="true"
         preload="none"
-        src={src}
+        // src={src}
       >
         <source
           title={title}
