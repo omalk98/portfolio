@@ -27,6 +27,7 @@ function RenderMedia({ src, alt, title }: any) {
       <video
         controls
         playsInline
+        webkit-playsinline="true"
         preload="none"
         src={src}
       >
