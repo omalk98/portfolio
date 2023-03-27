@@ -28,16 +28,17 @@ function RenderMedia({ src, alt, title }: any) {
         controls
         playsInline
         preload="none"
+        src={src}
       >
         <source
           title={title}
           src={`${link.join('.')}.webm`}
-          type={`video/webm`}
+          type="video/webm"
         />
         <source
           title={title}
           src={`${link.join('.')}.mp4`}
-          type={`video/mp4`}
+          type="video/mp4"
         />
       </video>
     );
