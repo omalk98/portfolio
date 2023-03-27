@@ -6,7 +6,7 @@ Film making and editing are complex and nuanced processes that require a combina
 
 ### Example
 
-As a simple example, i shot this short video using my phone and edited in Premiere Pro. I used a few simple techniques to make it look more professional while keeping it internet casual. I hope you enjoy it!
+As a simple example, I shot this short video using my phone and edited in Premiere Pro. I used a few simple techniques to make it look more professional while keeping it internet casual. It showcases how different lighting and angles and music can affect the perception of a scene. I hope you enjoy it!
 
 ![Hacker-Film](/portfolio/video/hacker-film.webm)
 

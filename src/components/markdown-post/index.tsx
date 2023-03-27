@@ -26,6 +26,7 @@ function RenderMedia({ src, alt, title }: any) {
     return (
       <video
         controls
+        playsInline
         preload="none"
       >
         <source
