@@ -10,7 +10,7 @@ As a simple example, i shot this short video using my phone and edited in Premie
 
 ![Hacker-Film](/portfolio/video/hacker-film.webm)
 
-You can also see the full quality version at (https://www.youtube.com/watch?v=x3OPmVx2yp0)
+You can also see the full quality version at https://www.youtube.com/watch?v=x3OPmVx2yp0
 
 ## Steps of Film Making
 
