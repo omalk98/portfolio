@@ -9,6 +9,21 @@
     -webkit-backdrop-filter: blur(15px);
 }
 
+.markdown-post a {
+    color: var(--blue);
+    text-decoration: underline;
+    transition: font-weight 0.2s ease-in-out;
+}
+
+.markdown-post a:hover {
+    font-weight: bold;
+}
+
+.markdown-post a:visited {
+    color: var(--purple);
+    text-decoration: underline;
+}
+
 .markdown-post-date {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     text-align: right;

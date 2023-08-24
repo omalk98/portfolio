@@ -4,6 +4,14 @@ const post: PostData = {
   text: `
 Film making and editing are complex and nuanced processes that require a combination of creativity, technical skill, and attention to detail. Whether you're a seasoned filmmaker or just starting out, there are some general guidelines and best practices that can help you to create a compelling and visually stunning film. In this blog post, we'll discuss some film making and editing guidelines that you can use to create a professional-quality film.
 
+### Example
+
+As a simple example, I shot this short video using my phone and edited in Premiere Pro. I used a few simple techniques to make it look more professional while keeping it internet casual. It showcases how different lighting and angles and music can affect the perception of a scene. I hope you enjoy it!
+
+![Hacker-Film](/portfolio/video/hacker-film.webm)
+
+You can also see the full quality version at https://www.youtube.com/watch?v=x3OPmVx2yp0
+
 ## Steps of Film Making
 
 Before diving into the guidelines and best practices for film making and editing, it's important to briefly touch upon the steps involved in the film making process. Here's a quick overview of the key steps involved in bringing a film from idea to completion:

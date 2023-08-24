@@ -21,15 +21,24 @@ function RenderMedia({ src, alt, title }: any) {
       </audio>
     );
   } else if (MediaTypes.video.includes(type)) {
+    const link = src.split('.');
+    link.pop();
     return (
       <video
         controls
+        playsInline
+        webkit-playsinline="true"
         preload="none"
       >
         <source
           title={title}
-          src={src}
-          type={`video/${type}`}
+          src={`${link.join('.')}.webm`}
+          type="video/webm"
+        />
+        <source
+          title={title}
+          src={`${link.join('.')}.mp4`}
+          type="video/mp4"
         />
       </video>
     );
