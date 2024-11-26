@@ -4,7 +4,7 @@ import { ReactTyped } from "react-typed";
 import { Award } from "lucide-react";
 import Layout from "@/layout";
 import LinkWrapper from "@/components/link-wrapper";
-import DownloadButton from "@/components/download-resume";
+import DownloadButton from "@/components/download-button";
 import { skills, experience, contactLinks } from "@/data";
 import BadgeLink from "@/components/badge-link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -35,6 +35,7 @@ export default function Portfolio() {
     <Layout>
       {/* Hero Section */}
       <motion.div
+        id="top"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -65,13 +66,14 @@ export default function Portfolio() {
                 "Solving complex technical challenges",
                 "Passionate about clean code",
               ]}
-              typeSpeed={45}
+              typeSpeed={55}
               backSpeed={40}
+              backDelay={2000}
               loop
               className='text-yellow-600 dark:text-blue-400'
             />
           </div>
-          <div className='my-6'>
+          <div className='my-10'>
             <DownloadButton
               href='./resume.pdf'
               fileName='Omar_Hussein-Resume.pdf'
@@ -80,7 +82,7 @@ export default function Portfolio() {
             />
           </div>
 
-          <div className='flex flex-wrap gap-4 mb-8 justify-center my-20'>
+          <div className='flex flex-wrap gap-4 mb-8 justify-center my-10'>
             <BouncingList
               step={2}
               items={contactLinks}
@@ -89,7 +91,7 @@ export default function Portfolio() {
                   key={contact.label}
                   href={contact.href}
                   title={contact.label}
-                  className='items-center gap-2 transition-all align-center inline-flex hover:scale-125 rounded-full p-2'
+                  className='items-center gap-2 transition-all align-center inline-flex hover:scale-110 rounded-full p-2'
                 >
                   <contact.icon
                     width={26}
@@ -144,6 +146,7 @@ export default function Portfolio() {
         id='experience'
         delay={0.4}
         title='Experience'
+        fullWidth
       >
         <Timeline
           data={experience.map((exp) => ({

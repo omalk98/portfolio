@@ -42,7 +42,7 @@ export default function DetailCard({
         )}
         {...props}
       >
-        <span className='relative z-10'>
+        <div className='relative z-10'>
           <CardHeader>
             <div className='flex justify-between items-start font-semibold'>
               <div>
@@ -67,7 +67,7 @@ export default function DetailCard({
               {content}
             </CardContent>
           )}
-        </span>
+        </div>
         {children}
       </Card>
     </motion.div>

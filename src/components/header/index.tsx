@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 import ThemeToggle from "@/components/toggle-theme";
+import ScrollToTopButton from "@/components/scroll-to-top";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/lib/constants";
 import DesktopNav from "./navigation";
@@ -73,6 +74,7 @@ const HeaderNav = ({ className = "" }: { className?: string }) => {
       <div className='container mx-auto px-4 py-4'>
         <div className='flex justify-center'>
           <ThemeToggle className='absolute right-0 hidden md:flex' />
+          <ScrollToTopButton />
           <DesktopNav
             navItems={navItems}
             dimensions={dimensions}

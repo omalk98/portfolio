@@ -52,12 +52,13 @@ export default function BouncingList<T>({
   const bounceVariants = {
     initial: { y: 0, x: 0 },
     bounce: {
-      y: [-15, 0],
+      y: [0, 10, -20, 5, 0],
+      scale: [1, 1.1, 0.95, 1.02, 1],
       transition: {
-        duration: 1.2,
-        type: "spring",
-        stiffness: 200,
-        damping: 7,
+        duration: 1,
+        times: [0, 0.2, 0.4, 0.7, 1],
+        type: "tween",
+        ease: "easeInOut",
       },
     },
   };

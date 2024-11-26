@@ -6,6 +6,7 @@ export default function SectionWrapper({
   id,
   muted = false,
   gradient = false,
+  fullWidth = false,
   delay = 0.2,
   title,
   className,
@@ -15,6 +16,7 @@ export default function SectionWrapper({
   children?: ReactNode;
   muted?: boolean;
   gradient?: boolean;
+  fullWidth?: boolean;
   delay?: number;
   title?: string;
   className?: string;
@@ -26,7 +28,8 @@ export default function SectionWrapper({
       animate={{ opacity: 1 }}
       transition={{ delay: delay }}
       className={cn(
-        "py-20 px-4 relative",
+        "py-20 relative",
+        !fullWidth && "px-4",
         !gradient && muted ? "bg-neutral-150 dark:bg-muted" : "",
         gradient
           ? muted
@@ -36,7 +39,7 @@ export default function SectionWrapper({
         className
       )}
     >
-      <div className='container max-w-[1200px] mx-auto px-4'>
+      <div className={cn('mx-auto max-w-[1200px]', !fullWidth && 'container px-4')}>
         <h2 className='text-4xl font-bold mb-12 text-center'>{title}</h2>
         {children}
       </div>
