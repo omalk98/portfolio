@@ -35,7 +35,7 @@ export default function MobileNav({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className='absolute top-0 left-0 right-0 mt-2 mx-4 bg-gray-200/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-lg border border-gray-700/50 shadow-lg'
+            className='absolute top-0 left-0 right-0 mt-2 mx-2 bg-gray-200/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-lg border border-gray-700/50 shadow-lg'
           >
             <ThemeToggle />
             <nav className='py-2'>

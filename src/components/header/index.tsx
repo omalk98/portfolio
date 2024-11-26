@@ -7,7 +7,7 @@ import { navItems } from "@/lib/constants";
 import DesktopNav from "./navigation";
 import MobileNav from "./mobile-nav";
 
-const HeaderNav = ({ className = "" }: { className?: string }) => {
+const HeaderNav = ({ className }: { className?: string }) => {
   const [activeTab, setActiveTab] = useState(-1);
   const [dimensions, setDimensions] = useState({ width: 0, left: 0 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,28 +70,30 @@ const HeaderNav = ({ className = "" }: { className?: string }) => {
   };
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50", className)}>
-      <div className='container mx-auto px-4 py-4'>
-        <div className='flex justify-center'>
-          <ThemeToggle className='absolute right-0 hidden md:flex' />
-          <ScrollToTopButton />
-          <DesktopNav
-            navItems={navItems}
-            dimensions={dimensions}
-            itemsRef={itemsRef}
-            handleClick={handleClick}
-            activeTab={activeTab}
-          />
-          <MobileNav
-            isMenuOpen={isMenuOpen}
-            setIsMenuOpen={setIsMenuOpen}
-            handleClick={handleClick}
-            activeTab={activeTab}
-            navItems={navItems}
-          />
+    <>
+      <header className={cn("fixed top-0 left-0 right-0 z-50", className)}>
+        <div className='mx-auto px-4 py-4'>
+          <div className='relative flex justify-center'>
+            <ThemeToggle className='absolute right-0 hidden md:flex' />
+            <ScrollToTopButton />
+            <DesktopNav
+              navItems={navItems}
+              dimensions={dimensions}
+              itemsRef={itemsRef}
+              handleClick={handleClick}
+              activeTab={activeTab}
+            />
+            <MobileNav
+              isMenuOpen={isMenuOpen}
+              setIsMenuOpen={setIsMenuOpen}
+              handleClick={handleClick}
+              activeTab={activeTab}
+              navItems={navItems}
+            />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

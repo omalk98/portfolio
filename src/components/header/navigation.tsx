@@ -21,7 +21,7 @@ export default function DesktopNav({
       {/* Navigation Container */}
       <div className='relative hidden md:block'>
         {/* Background Pill */}
-        <div className='absolute inset-0 bg-muted/50 rounded-full -z-10 backdrop-blur-sm border border-gray-700/50 my-1 shadow-inner' />
+        <div className='absolute inset-0 bg-muted/50 rounded-full -z-10 backdrop-blur-sm border border-gray-400/50 my-1 shadow-inner' />
 
         {/* Navigation Items */}
         <nav className='relative flex items-center px-3 py-2 space-x-2'>

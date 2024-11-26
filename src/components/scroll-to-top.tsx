@@ -61,7 +61,7 @@ export default function ScrollToTopButton({
         >
           <TooltipProvider delayDuration={300}>
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger asChild>
                 <Button
                   title='Scroll to Top'
                   variant='ghost'

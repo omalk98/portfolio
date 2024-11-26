@@ -13,8 +13,7 @@ import DetailCard from "@/components/detail-card";
 import SectionWrapper from "@/components/section-wrapper";
 import { Contact } from "@/types";
 import { Timeline } from "@/components/ui/timeline";
-import { CanvasRevealEffect } from "./components/ui/canvas-reveal-effect";
-// import { BackgroundLines } from "./components/ui/background-lines";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 
 export default function Portfolio() {
   useEffect(() => {
@@ -41,7 +40,7 @@ export default function Portfolio() {
         transition={{ duration: 0.6 }}
         className='container mx-auto transition-padding duration-200 min-h-screen flex flex-col items-center justify-center text-center'
       >
-        <div className='max-w-4xl w-full'>
+        <div className='relative max-w-4xl w-full p-4'>
           {/* Avatar */}
           <div className='flex justify-center mb-6'>
             <Avatar className='w-48 h-48 border-4 border-yellow-500 dark:border-blue-500'>
