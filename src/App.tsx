@@ -35,7 +35,7 @@ export default function Portfolio() {
     <Layout>
       {/* Hero Section */}
       <motion.div
-        id="top"
+        id='top'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -55,7 +55,9 @@ export default function Portfolio() {
           </div>
           {/* Name and Title */}
           <h1 className='text-4xl font-bold mb-2'>Omar Hussein</h1>
-          <h2 className='text-2xl text-gray-500 dark:text-gray-400 mb-4'>Software Developer</h2>
+          <h2 className='text-2xl text-gray-500 dark:text-gray-400 mb-4'>
+            Software Developer
+          </h2>
 
           {/* Typed Text */}
           <div className='text-xl text-gray-300 mb-6 h-10'>

@@ -60,8 +60,8 @@ export default function DesktopNav({
               {/* Underline on hover */}
               <span
                 className={cn(
-                  "bg-left-bottom bg-gradient-to-r from-primary to-primary bg-[length:0%_2px] bg-no-repeat duration-300 ease-out group-hover:bg-[length:100%_2px]",
-                  activeTab === index ? "bg-[length:100%_2px]" : ""
+                  "bg-left-bottom bg-gradient-to-r from-primary to-primary bg-[length:0%_0.5px] bg-no-repeat duration-300 ease-out group-hover:bg-[length:100%_0.5px]",
+                  activeTab === index ? "bg-[length:100%_1px]" : ""
                 )}
               >
                 {item.name}

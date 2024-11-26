@@ -3,6 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpFromDot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function ScrollToTopButton({
   className,
@@ -40,7 +46,7 @@ export default function ScrollToTopButton({
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className='fixed bottom-[50px] right-[50px] z-50'
+          className='fixed bottom-[10px] md:bottom-[50px] right-[10px] md:right-[50px] z-50'
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
@@ -53,17 +59,26 @@ export default function ScrollToTopButton({
             damping: 20,
           }}
         >
-          <Button
-            title='Scroll to Top'
-            variant='ghost'
-            onClick={scrollToTop}
-            className={cn(
-              "rounded-full bg-black dark:bg-white text-white dark:text-black p-3",
-              className
-            )}
-          >
-            <ArrowUpFromDot size={30} />
-          </Button>
+          <TooltipProvider delayDuration={300}>
+            <Tooltip>
+              <TooltipTrigger>
+                <Button
+                  title='Scroll to Top'
+                  variant='ghost'
+                  onClick={scrollToTop}
+                  className={cn(
+                    "rounded-full bg-black dark:bg-white text-white dark:text-black p-3",
+                    className
+                  )}
+                >
+                  <ArrowUpFromDot size={30} />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent sideOffset={12}>
+                <p>Scroll to Top</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </motion.div>
       )}
     </AnimatePresence>
