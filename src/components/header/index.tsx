@@ -1,48 +1,96 @@
-import NavigationBar from '../navigation-bar';
-import SocialMediaLinks from '../social-media-links';
-import { Download, PDF } from '../../assets/Icons';
-import './header.css';
+import { useRef, useState, useEffect } from "react";
 
-function Title() {
-  return (
-    <div className="head-title">
-      <img
-        src="/portfolio/images/me.png"
-        alt="cartoon me"
-        loading="lazy"
-        className="logo"
-      />
-      <span className="head-text">
-        Omar Hussein
-        <SocialMediaLinks />
-      </span>
-    </div>
-  );
-}
+import ThemeToggle from "@/components/toggle-theme";
+import { cn } from "@/lib/utils";
+import { navItems } from "@/lib/constants";
+import DesktopNav from "./navigation";
+import MobileNav from "./mobile-nav";
 
-function Resume() {
-  return (
-    <div className="resume">
-      <a
-        href="/portfolio/resume.pdf"
-        download="Omar-Hussein_resume.pdf"
-        className="download-resume"
-        title="Download Resume"
-      >
-        <span>
-          <PDF /> Resume <Download />
-        </span>
-      </a>
-    </div>
-  );
-}
+const HeaderNav = ({ className = "" }: { className?: string }) => {
+  const [activeTab, setActiveTab] = useState(-1);
+  const [dimensions, setDimensions] = useState({ width: 0, left: 0 });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const itemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
-export default function Header() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) =>
+        document.querySelector(item.path)
+      );
+
+      const scrollPosition = window.scrollY + 100;
+
+      sections.forEach((section, index) => {
+        if (section) {
+          if (scrollPosition < 500) {
+            setActiveTab(-1);
+            updatePillDimensions(null, { width: 0, left: 0 });
+          }
+          const sectionTop = (section as HTMLElement).offsetTop - 300;
+          const sectionBottom =
+            sectionTop + (section as HTMLElement).offsetHeight - 300;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveTab(index);
+            updatePillDimensions(itemsRef.current[index]);
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const updatePillDimensions = (
+    element: HTMLAnchorElement | null,
+    dimensions?: { width: number; left: number }
+  ): void => {
+    if (element) {
+      setDimensions({
+        width: dimensions?.width ?? element.offsetWidth,
+        left: dimensions?.left ?? element.offsetLeft - 12,
+      });
+    } else {
+      setDimensions({ width: 0, left: 0 });
+    }
+  };
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    index: number
+  ) => {
+    e.preventDefault();
+    const section = document.querySelector(navItems[index].path);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
-    <header className="header">
-      <Title />
-      <Resume />
-      <NavigationBar />
+    <header className={cn("fixed top-0 left-0 right-0 z-50", className)}>
+      <div className='container mx-auto px-4 py-4'>
+        <div className='flex justify-center'>
+          <ThemeToggle className='absolute right-0 hidden md:flex' />
+          <DesktopNav
+            navItems={navItems}
+            dimensions={dimensions}
+            itemsRef={itemsRef}
+            handleClick={handleClick}
+            activeTab={activeTab}
+          />
+          <MobileNav
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
+            handleClick={handleClick}
+            activeTab={activeTab}
+            navItems={navItems}
+          />
+        </div>
+      </div>
     </header>
   );
-}
+};
+
+export default HeaderNav;
