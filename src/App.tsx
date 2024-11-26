@@ -45,7 +45,7 @@ export default function Portfolio() {
           <div className='flex justify-center mb-6'>
             <Avatar className='w-48 h-48 border-4 border-yellow-500 dark:border-blue-500'>
               <AvatarImage
-                src='/portfolio/image/omar-headshot.jpg'
+                src='/image/omar-headshot.jpg'
                 alt='Omar Hussein'
                 className='object-cover'
               />

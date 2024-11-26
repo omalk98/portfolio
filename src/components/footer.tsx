@@ -12,7 +12,7 @@ export default function Footer({
       <p className="flex justify-center">
         Made with ❤️ by Omar Hussein
         <img
-          src='/portfolio/image/omar-bitmoji.png'
+          src='/image/omar-bitmoji.png'
           className="w-[24px] h-[24px] mx-2 mt-[-2px]"
         />
         &copy; {new Date().getFullYear()}

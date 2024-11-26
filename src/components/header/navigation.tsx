@@ -28,7 +28,7 @@ export default function DesktopNav({
           {/* Sliding Pill Indicator */}
           <motion.div
             className={cn(
-              "absolute bg-yellow-400/50 dark:bg-green-600/50 border-yellow-400 dark:border-green-600 rounded-full z-0 shadow-md",
+              "absolute bg-yellow-400/50 dark:bg-cyan-600/50 border-yellow-400 dark:border-cyan-600 rounded-full z-0 shadow-md",
               activeTab === -1 ? "border-none" : "border-[1.5px]"
             )}
             animate={{
