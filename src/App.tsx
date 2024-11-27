@@ -194,7 +194,7 @@ export default function Portfolio() {
                     <CanvasRevealEffect
                       animationSpeed={2}
                       containerClassName='bg-yellow-600 dark:none'
-                      dotSize={2.005}
+                      dotSize={2}
                       colors={[[255, 255, 240]]}
                     />
                     <div className='absolute dark:hidden inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-gray-200/70' />
