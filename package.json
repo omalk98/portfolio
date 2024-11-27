@@ -1,8 +1,19 @@
 {
   "name": "portfolio",
+  "author": {
+    "name": "Omar Hussein",
+    "email": "omalk298@gmail.com",
+    "url": "https://omalk98.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omalk98/portfolio"
+  },
+  "homepage": "https://omalk98.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc -b && vite build",

@@ -14,6 +14,7 @@ import SectionWrapper from "@/components/section-wrapper";
 import { Contact } from "@/types";
 import { Timeline } from "@/components/ui/timeline";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import GlowCard from "./components/ui/glow-card";
 
 export default function Portfolio() {
   useEffect(() => {
@@ -35,9 +36,15 @@ export default function Portfolio() {
       {/* Hero Section */}
       <motion.div
         id='top'
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: -500 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.8,
+          type: "spring",
+          stiffness: 100,
+          damping: 8,
+        }}
         className='container mx-auto transition-padding duration-200 min-h-screen flex flex-col items-center justify-center text-center'
       >
         <div className='relative max-w-4xl w-full p-4'>
@@ -116,7 +123,6 @@ export default function Portfolio() {
       {/* Skills Section */}
       <SectionWrapper
         id='skills'
-        delay={0.2}
         title='Skills & Technologies'
       >
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto'>
@@ -145,7 +151,6 @@ export default function Portfolio() {
       {/* Experience Section */}
       <SectionWrapper
         id='experience'
-        delay={0.4}
         title='Experience'
         fullWidth
       >
@@ -153,45 +158,49 @@ export default function Portfolio() {
           data={experience.map((exp) => ({
             title: exp.duration,
             content: (
-              <DetailCard
+              <motion.div
                 key={exp.company}
-                className=' shadow-lg dark:shadow-white/20'
-                title={exp.company}
-                description={
-                  <>
-                    {exp.role} <i>({exp.type})</i> | {exp.location}
-                  </>
-                }
-                date={exp.duration}
-                content={
-                  <ul className='list-disc list-inside space-y-2'>
-                    {exp.highlights.map((highlight, i) => (
-                      <li key={i}>{highlight}</li>
-                    ))}
-                  </ul>
-                }
+                initial={{ opacity: 0, x: 200 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className='relative'
               >
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className='h-full w-full absolute inset-0 bg-yellow-800'
+                <DetailCard
+                  key={exp.company}
+                  className='shadow-lg dark:shadow-white/20'
+                  title={exp.company}
+                  description={
+                    <>
+                      {exp.role} <i>({exp.type})</i> | {exp.location}
+                    </>
+                  }
+                  date={exp.duration}
+                  content={
+                    <ul className='list-disc list-inside space-y-2'>
+                      {exp.highlights.map((highlight, i) => (
+                        <li key={i}>{highlight}</li>
+                      ))}
+                    </ul>
+                  }
                 >
-                  <CanvasRevealEffect
-                    animationSpeed={2}
-                    containerClassName='bg-emerald-900 hidden dark:block'
-                    dotSize={2}
-                  />
-                  <div className='absolute hidden dark:block inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90' />
+                  <div className='h-full w-full absolute inset-0 bg-yellow-800'>
+                    <CanvasRevealEffect
+                      animationSpeed={2}
+                      containerClassName='bg-emerald-900 hidden dark:block'
+                      dotSize={2}
+                    />
+                    <div className='absolute hidden dark:block inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90' />
 
-                  <CanvasRevealEffect
-                    animationSpeed={2}
-                    containerClassName='bg-yellow-600 dark:none'
-                    dotSize={2.005}
-                    colors={[[255, 255, 240]]}
-                  />
-                  <div className='absolute dark:hidden inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-gray-200/70' />
-                </motion.div>
-              </DetailCard>
+                    <CanvasRevealEffect
+                      animationSpeed={2}
+                      containerClassName='bg-yellow-600 dark:none'
+                      dotSize={2.005}
+                      colors={[[255, 255, 240]]}
+                    />
+                    <div className='absolute dark:hidden inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-gray-200/70' />
+                  </div>
+                </DetailCard>
+              </motion.div>
             ),
           }))}
         />
@@ -200,7 +209,6 @@ export default function Portfolio() {
       {/* Projects Section */}
       <SectionWrapper
         id='projects'
-        delay={0.6}
         title='Notable Projects'
       >
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto'>
@@ -235,7 +243,6 @@ export default function Portfolio() {
       {/* Education Section */}
       <SectionWrapper
         id='education'
-        delay={0.8}
         title='Education'
       >
         <DetailCard
@@ -258,27 +265,29 @@ export default function Portfolio() {
 
       <SectionWrapper
         id='contact'
-        delay={1}
         title='Get in Touch'
       >
         {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto'> */}
-        <div className='flex justify-center flex-wrap gap-6 max-w-4xl mx-auto'>
-          {contactLinks.map((contact) => (
+        <div className='flex justify-center flex-wrap gap-10 max-w-4xl mx-auto'>
+          {contactLinks.map((contact, index) => (
             <motion.div
               key={contact.label}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 * index }}
             >
-              <LinkWrapper
-                href={contact.href}
-                className='block h-full custom-hover-data-color min-w-[250px]'
-                style={{ "--data-color": contact.color }}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <DetailCard
-                  className='hover:bg-slate-200 dark:hover:bg-gray-600 transition-colors'
-                  content={
-                    <div className='flex flex-col items-center text-center space-y-4'>
-                      <div className='p-4 rounded-full bg-slate-50 dark:bg-gray-800'>
+                <LinkWrapper
+                  href={contact.href}
+                  className='block h-full custom-hover-data-color min-w-[250px]'
+                  style={{ "--data-color": contact.color }}
+                >
+                  <GlowCard>
+                    <div className='w-full flex flex-col items-center text-center space-y-4'>
+                      <div className='p-4 rounded-full bg-white dark:bg-slate-900'>
                         <contact.icon
                           width={32}
                           height={32}
@@ -294,9 +303,9 @@ export default function Portfolio() {
                         </p>
                       </div>
                     </div>
-                  }
-                />
-              </LinkWrapper>
+                  </GlowCard>
+                </LinkWrapper>
+              </motion.div>
             </motion.div>
           ))}
         </div>

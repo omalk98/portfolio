@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface BouncingListProps<T> {
   items: T[];
@@ -16,8 +16,11 @@ export default function BouncingList<T>({
 }: BouncingListProps<T>) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [forward, setForward] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref);
 
   useEffect(() => {
+    if (!inView) return;
     const timer = setTimeout(() => {
       switch (mode) {
         case "forward":
@@ -47,7 +50,7 @@ export default function BouncingList<T>({
     }, 2000); // Total animation time (bounce up and down)
 
     return () => clearTimeout(timer);
-  }, [activeIndex, forward, items.length, mode, step]);
+  }, [activeIndex, forward, items.length, mode, step, inView]);
 
   const bounceVariants = {
     initial: { y: 0, x: 0 },
@@ -64,13 +67,14 @@ export default function BouncingList<T>({
   };
 
   return (
-    <div className='flex flex-wrap gap-4'>
+    <div className='flex flex-wrap gap-4' ref={ref}>
       {items.map((item, index) => (
         <motion.span
           key={`bounce-item-${index}`}
           initial='initial'
           variants={bounceVariants}
-          animate={index === activeIndex ? "bounce" : "initial"}
+          animate={inView && index === activeIndex ? "bounce" : "initial"}
+          
         >
           {renderComponent(item)}
         </motion.span>

@@ -50,7 +50,7 @@ export default function ScrollToTopButton({
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           transition={{
             duration: 0.2,
@@ -64,7 +64,6 @@ export default function ScrollToTopButton({
               <TooltipTrigger asChild>
                 <Button
                   title='Scroll to Top'
-                  variant='ghost'
                   onClick={scrollToTop}
                   className={cn(
                     "rounded-full bg-black dark:bg-white text-white dark:text-black p-3",
