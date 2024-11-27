@@ -1,12 +1,10 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
-import { Award } from "lucide-react";
 import Layout from "@/layout";
 import LinkWrapper from "@/components/link-wrapper";
 import DownloadButton from "@/components/download-button";
-import { skills, experience, contactLinks } from "@/data";
-import BadgeLink from "@/components/badge-link";
+import { experience, contactLinks } from "@/data";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import BouncingList from "@/components/bouncing-list";
 import DetailCard from "@/components/detail-card";
@@ -14,7 +12,10 @@ import SectionWrapper from "@/components/section-wrapper";
 import { Contact } from "@/types";
 import { Timeline } from "@/components/ui/timeline";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
-import GlowCard from "./components/ui/glow-card";
+import GlowCard from "@/components/ui/glow-card";
+import { languageTools } from "@/data/skills";
+import TechStackCard from "@/components/tech-stack-card";
+import StaggerList from "./components/stagger-list";
 
 export default function Portfolio() {
   useEffect(() => {
@@ -92,6 +93,7 @@ export default function Portfolio() {
 
           <div className='flex flex-wrap gap-4 mb-8 justify-center my-10'>
             <BouncingList
+              className='flex flex-wrap gap-4'
               step={2}
               items={contactLinks}
               renderComponent={(contact: Contact) => (
@@ -102,8 +104,7 @@ export default function Portfolio() {
                   className='items-center gap-2 transition-all align-center inline-flex hover:scale-110 rounded-full p-2'
                 >
                   <contact.icon
-                    width={26}
-                    height={26}
+                    size={26}
                     style={{ color: contact.color }}
                   />
                 </LinkWrapper>
@@ -125,27 +126,18 @@ export default function Portfolio() {
         id='skills'
         title='Skills & Technologies'
       >
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto'>
-          {Object.entries(skills).map(([category, items]) => (
-            <DetailCard
-              key={category}
-              variant='dark'
-              className='border-none shadow-lg'
-              title={category}
-              content={
-                <div className='flex flex-wrap gap-2'>
-                  {items.map((skill) => (
-                    <BadgeLink
-                      key={skill}
-                      text={skill}
-                      icon={Award}
-                    />
-                  ))}
-                </div>
-              }
+        <StaggerList
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto'
+          items={languageTools}
+          renderComponent={(tool) => (
+            <TechStackCard
+              key={tool.title}
+              title={tool.title}
+              icons={tool.icons}
+              badges={tool.badges}
             />
-          ))}
-        </div>
+          )}
+        />
       </SectionWrapper>
 
       {/* Experience Section */}
@@ -183,22 +175,24 @@ export default function Portfolio() {
                     </ul>
                   }
                 >
-                  <div className='h-full w-full absolute inset-0 bg-yellow-800'>
-                    <CanvasRevealEffect
-                      animationSpeed={2}
-                      containerClassName='bg-emerald-900 hidden dark:block'
-                      dotSize={2}
-                    />
-                    <div className='absolute hidden dark:block inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90' />
+                  {import.meta.env.PROD && (
+                    <div className='h-full w-full absolute inset-0 bg-yellow-800'>
+                      <CanvasRevealEffect
+                        animationSpeed={2}
+                        containerClassName='bg-emerald-900 hidden dark:block'
+                        dotSize={2}
+                      />
+                      <div className='absolute hidden dark:block inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90' />
 
-                    <CanvasRevealEffect
-                      animationSpeed={2}
-                      containerClassName='bg-yellow-600 dark:none'
-                      dotSize={2}
-                      colors={[[255, 255, 240]]}
-                    />
-                    <div className='absolute dark:hidden inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-gray-200/70' />
-                  </div>
+                      <CanvasRevealEffect
+                        animationSpeed={2}
+                        containerClassName='bg-yellow-600 dark:none'
+                        dotSize={2}
+                        colors={[[255, 255, 240]]}
+                      />
+                      <div className='absolute dark:hidden inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-gray-200/70' />
+                    </div>
+                  )}
                 </DetailCard>
               </motion.div>
             ),
@@ -267,48 +261,41 @@ export default function Portfolio() {
         id='contact'
         title='Get in Touch'
       >
-        {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto'> */}
-        <div className='flex justify-center flex-wrap gap-10 max-w-4xl mx-auto'>
-          {contactLinks.map((contact, index) => (
-            <motion.div
-              key={contact.label}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 * index }}
+        <StaggerList
+          className='flex flex-wrap flex-col md:flex-row justify-center items-center gap-10 max-w-5xl mx-auto'
+          items={contactLinks}
+          renderComponent={(contact) => (
+            <motion.div className="inline"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <LinkWrapper
+                href={contact.href}
+                className='h-full custom-hover-data-color'
+                style={{ "--data-color": contact.color }}
               >
-                <LinkWrapper
-                  href={contact.href}
-                  className='block h-full custom-hover-data-color min-w-[250px]'
-                  style={{ "--data-color": contact.color }}
-                >
-                  <GlowCard>
-                    <div className='w-full flex flex-col items-center text-center space-y-4'>
-                      <div className='p-4 rounded-full bg-white dark:bg-slate-900'>
-                        <contact.icon
-                          width={32}
-                          height={32}
-                          style={{ color: contact.color }}
-                        />
-                      </div>
-                      <div>
-                        <h3 className='font-semibold text-xl mb-1 custom-hover-data-color'>
-                          {contact.label}
-                        </h3>
-                        <p className='text-gray-600 dark:text-gray-300'>
-                          {contact.value}
-                        </p>
-                      </div>
+                <GlowCard className='shadow-xl w-[300px] transition-colors bg-slate-100/90 dark:bg-gray-900/90 border hover:bg-slate-100/70 hover:dark:bg-gray-900/70 border-gray-300 dark:border-gray-700 px-4 py-8 rounded-2xl'>
+                  <div className='w-full flex flex-col items-center text-center space-y-4'>
+                    <div className='p-4 rounded-full bg-white dark:bg-slate-900'>
+                      <contact.icon
+                        size={32}
+                        style={{ color: contact.color }}
+                      />
                     </div>
-                  </GlowCard>
-                </LinkWrapper>
-              </motion.div>
+                    <div>
+                      <h3 className='font-semibold text-xl mb-1 custom-hover-data-color'>
+                        {contact.label}
+                      </h3>
+                      <p className='text-gray-600 dark:text-gray-300'>
+                        {contact.value}
+                      </p>
+                    </div>
+                  </div>
+                </GlowCard>
+              </LinkWrapper>
             </motion.div>
-          ))}
-        </div>
+          )}
+        />
       </SectionWrapper>
     </Layout>
   );

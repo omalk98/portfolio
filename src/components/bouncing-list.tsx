@@ -6,6 +6,9 @@ interface BouncingListProps<T> {
   renderComponent: (item: T) => JSX.Element;
   mode?: "forward" | "reverse" | "loopback";
   step?: number;
+  duration?: number;
+  delay?: number;
+  className?: string;
 }
 
 export default function BouncingList<T>({
@@ -13,6 +16,9 @@ export default function BouncingList<T>({
   renderComponent,
   mode = "forward",
   step = 1,
+  duration = 1,
+  delay = 2000,
+  className,
 }: BouncingListProps<T>) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [forward, setForward] = useState(true);
@@ -47,7 +53,7 @@ export default function BouncingList<T>({
           }
           break;
       }
-    }, 2000); // Total animation time (bounce up and down)
+    }, delay); // Total animation time (bounce up and down)
 
     return () => clearTimeout(timer);
   }, [activeIndex, forward, items.length, mode, step, inView]);
@@ -58,7 +64,7 @@ export default function BouncingList<T>({
       y: [0, 10, -20, 5, 0],
       scale: [1, 1.1, 0.95, 1.02, 1],
       transition: {
-        duration: 1,
+        duration: duration,
         times: [0, 0.2, 0.4, 0.7, 1],
         type: "tween",
         ease: "easeInOut",
@@ -67,14 +73,16 @@ export default function BouncingList<T>({
   };
 
   return (
-    <div className='flex flex-wrap gap-4' ref={ref}>
+    <div
+      className={className}
+      ref={ref}
+    >
       {items.map((item, index) => (
         <motion.span
           key={`bounce-item-${index}`}
           initial='initial'
           variants={bounceVariants}
           animate={inView && index === activeIndex ? "bounce" : "initial"}
-          
         >
           {renderComponent(item)}
         </motion.span>

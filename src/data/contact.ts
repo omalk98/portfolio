@@ -1,9 +1,9 @@
 import { Contact } from "@/types";
-import { Mail, Phone, MapPin } from "lucide-react";
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { LuMail, LuPhone, LuMapPin } from "react-icons/lu";
+import { LuGithub, LuLinkedin, LuInstagram } from "react-icons/lu";
 
 export const myLocation: Contact = {
-  icon: MapPin,
+  icon: LuMapPin,
   label: "Location",
   value: "North York, ON",
   href: "",
@@ -12,7 +12,7 @@ export const myLocation: Contact = {
 
 export const contactLinks: Contact[] = [
   {
-    icon: Mail,
+    icon: LuMail,
     label: "Email",
     value: "omalk298@gmail.com",
     href: "mailto:omalk298@gmail.com",
@@ -20,7 +20,7 @@ export const contactLinks: Contact[] = [
     color: "#60a5fa",
   },
   {
-    icon: Phone,
+    icon: LuPhone,
     label: "Phone",
     value: "+1 (416) 434-4349",
     href: "tel:+14164344349",
@@ -28,7 +28,7 @@ export const contactLinks: Contact[] = [
     color: "#4ade80",
   },
   {
-    icon: Github,
+    icon: LuGithub,
     label: "GitHub",
     value: "github.com/omalk98",
     href: "https://github.com/omalk98",
@@ -36,7 +36,7 @@ export const contactLinks: Contact[] = [
     color: "#c084fc",
   },
   {
-    icon: Linkedin,
+    icon: LuLinkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/omalk98",
     href: "https://www.linkedin.com/in/omalk98",
@@ -44,7 +44,7 @@ export const contactLinks: Contact[] = [
     color: "#3b89f6",
   },
   {
-    icon: Instagram,
+    icon: LuInstagram,
     label: "Instagram",
     value: "instagram.com/omalk298",
     href: "https://www.instagram.com/omalk298",

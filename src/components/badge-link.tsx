@@ -1,18 +1,14 @@
 import { cn } from "@/lib/utils";
-import LinkWrapper from "./link-wrapper";
-import { Badge } from "./ui/badge";
+import LinkWrapper from "@/components/link-wrapper";
+import { Badge } from "@/components/ui/badge";
+import { type BadgeLinkProps } from "@/types";
 
 export default function BadgeLink({
   text,
   href,
   icon: Icon,
   color = "#16a34a",
-}: {
-  text: string;
-  href?: string;
-  icon?: React.ComponentType<React.ComponentProps<"svg">>;
-  color?: string;
-}) {
+}: BadgeLinkProps) {
   return (
     <LinkWrapper href={href}>
       <Badge
@@ -30,8 +26,7 @@ export default function BadgeLink({
       >
         {Icon && (
           <Icon
-            width={16}
-            height={16}
+            size={16}
             className='mr-1'
           />
         )}

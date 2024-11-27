@@ -71,7 +71,7 @@ const HeaderNav = ({ className }: { className?: string }) => {
 
   return (
     <header className={cn("fixed top-0 left-0 right-0 z-50", className)}>
-      <div className='mx-auto px-4 py-4'>
+      <div className='mx-auto md:p-4'>
         <div className='relative flex justify-center'>
           <ThemeToggle className='absolute right-0 hidden md:flex' />
           <ScrollToTopButton />

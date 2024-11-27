@@ -1,5 +1,9 @@
+import { type IconType } from "react-icons/lib";
+
+export type { IconType };
+
 export interface Contact {
-  icon: React.ComponentType<React.ComponentProps<"svg">>;
+  icon: IconType;
   label: string;
   value: string;
   href: string;
@@ -21,4 +25,11 @@ export interface Project {
   stack: string[];
   github: string;
   live: string;
+}
+
+export interface BadgeLinkProps {
+  text: string;
+  href?: string;
+  icon?: IconType | null;
+  color?: string;
 }

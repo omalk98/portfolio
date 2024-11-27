@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Switch } from "@/components/ui/switch";
-import { Sun, Moon } from "lucide-react";
+import { LuSun, LuMoon } from "react-icons/lu";
 import { cn, themeToggle } from "@/lib/utils";
 
 export default function ThemeToggle({ className }: { className?: string }) {
@@ -25,7 +25,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
           ease: "easeInOut",
         }}
       >
-        <Sun
+        <LuSun
           size={24}
           className={cn(
             "text-yellow-500",
@@ -50,7 +50,7 @@ export default function ThemeToggle({ className }: { className?: string }) {
           ease: "easeInOut",
         }}
       >
-        <Moon
+        <LuMoon
           size={24}
           className={cn("text-primary", isDark ? "opacity-100" : "opacity-50")}
           onClick={() => toggleTheme(true)}

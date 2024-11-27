@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Download, Check, LoaderCircle } from "lucide-react";
+import { LuDownload, LuCheck, LuLoader } from "react-icons/lu";
 import { motion } from "framer-motion";
 import {
   Tooltip,
@@ -136,12 +136,12 @@ const DownloadButton = ({
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, damping: 10 }}
                 >
-                  <Check className='h-5 w-5' />
+                  <LuCheck className='h-5 w-5' />
                 </motion.div>
               ) : isDownloading ? (
-                <LoaderCircle className='h-5 w-5' />
+                <LuLoader className='h-5 w-5' />
               ) : (
-                <Download className='h-5 w-5' />
+                <LuDownload className='h-5 w-5' />
               )}
             </motion.div>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpFromDot } from "lucide-react";
+import { LuArrowUpFromDot } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -46,7 +46,7 @@ export default function ScrollToTopButton({
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className='fixed bottom-[10px] md:bottom-[50px] right-[10px] md:right-[50px] z-50'
+          className='fixed bottom-0 right-0 m-4 z-50'
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
@@ -70,7 +70,7 @@ export default function ScrollToTopButton({
                     className
                   )}
                 >
-                  <ArrowUpFromDot size={30} />
+                  <LuArrowUpFromDot size={30} />
                 </Button>
               </TooltipTrigger>
               <TooltipContent sideOffset={12}>

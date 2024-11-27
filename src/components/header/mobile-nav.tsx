@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { LuMenu, LuX } from "react-icons/lu";
 import ThemeToggle from "../toggle-theme";
 import { cn } from "@/lib/utils";
 
@@ -22,10 +22,10 @@ export default function MobileNav({
     <div className='md:hidden w-full'>
       <button
         onClick={() => setIsMenuOpen((prev) => !prev)}
-        className='relative p-2 hover:bg-gray-600/50 transition-background duration-150 rounded-full float-end backdrop-blur-md z-10'
+        className='relative p-2 m-4 hover:bg-gray-600/50 transition-background duration-150 rounded-full float-end backdrop-blur-md z-10'
         aria-label='Toggle menu'
       >
-        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        {isMenuOpen ? <LuX size={24} /> : <LuMenu size={24} />}
       </button>
 
       <AnimatePresence>
@@ -46,7 +46,7 @@ export default function MobileNav({
                   className={cn(
                     "block px-4 py-3 text-sm transition-colors duration-200",
                     activeTab === index
-                      ? "bg-yellow-400/40 dark:bg-green-600/20 font-bold"
+                      ? "bg-yellow-400/40 dark:bg-cyan-600/20 font-bold"
                       : "text-gray-600 dark:text-gray-400 hover:bg-gray-700/50 hover:text-white font-medium"
                   )}
                   onClick={(e) => handleClick(e, index)}
