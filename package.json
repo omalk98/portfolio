@@ -19,9 +19,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build && npm run cname",
-    "deploy": "gh-pages -d dist",
-    "cname": "echo 'omalk98.com' > ./dist/CNAME"  
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
