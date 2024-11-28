@@ -50,9 +50,14 @@ import {
 export const languageTools = [
   {
     title: "Languages",
-    icons: [{ icon: LuBinary, color: "#FFFFFF" }],
+    icons: [{ icon: LuBinary, color: "" }],
     badges: [
-      { text: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      {
+        text: "JavaScript",
+        icon: SiJavascript,
+        color: "#F7DF1E",
+        textColor: "",
+      },
       { text: "TypeScript", icon: SiTypescript, color: "#3178C6" },
       { text: "Go", icon: SiGo, color: "#00ADD8" },
       { text: "Python", icon: SiPython, color: "#306998" },
@@ -61,7 +66,7 @@ export const languageTools = [
       { text: "Bash", icon: SiGnubash, color: "#4EAA25" },
       { text: "HTML", icon: SiHtml5, color: "#E34F26" },
       { text: "CSS", icon: SiCss3, color: "#1572B6" },
-    ]
+    ],
   },
   {
     title: "JavaScript/TypeScript Tools",
@@ -71,7 +76,7 @@ export const languageTools = [
     ],
     badges: [
       { text: "Node.js", icon: SiNodedotjs, color: "#68A063" },
-      { text: "React.js", icon: SiReact, color: "#61DAFB" },
+      { text: "React.js", icon: SiReact, color: "#61DAFB", textColor: "" },
       { text: "Next.js", icon: SiNextdotjs, color: "#000000" },
       { text: "Vue.js", icon: SiVuedotjs, color: "#42B883" },
       { text: "Nuxt.js", icon: SiNuxtdotjs, color: "#00DC82" },
@@ -84,7 +89,7 @@ export const languageTools = [
   },
   {
     title: "Python Tools",
-    icons: [{icon: SiPython, color: "#306998"}],
+    icons: [{ icon: SiPython, color: "#306998" }],
     badges: [
       { text: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
       { text: "Selenium", icon: SiSelenium, color: "#43B02A" },
@@ -96,18 +101,23 @@ export const languageTools = [
   },
   {
     title: "Cloud Tools",
-    icons: [{icon: LuCloud, color: "#7DD3FC"}],
+    icons: [{ icon: LuCloud, color: "#7DD3FC" }],
     badges: [
-      { text: "Linux", icon: SiLinux, color: "#FCC624" },
+      { text: "Linux", icon: SiLinux, color: "#FCC624", textColor: "" },
       { text: "Docker", icon: SiDocker, color: "#2496ED" },
-      { text: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
+      {
+        text: "AWS",
+        icon: SiAmazonwebservices,
+        color: "#FF9900",
+        textColor: "",
+      },
       { text: "GCP", icon: SiGooglecloud, color: "#4285F4" },
       { text: "Azure", icon: null, color: "#007FFF" }, // Add the correct icon
     ],
   },
   {
     title: "Databases",
-    icons: [{ icon: FaDatabase, color: "#FFFFFF" }],
+    icons: [{ icon: FaDatabase, color: "" }],
     badges: [
       { text: "MySQL", icon: SiMysql, color: "#4479A1" },
       { text: "PostgreSQL", icon: SiPostgresql, color: "#336791" },

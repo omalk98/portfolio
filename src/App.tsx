@@ -205,33 +205,41 @@ export default function Portfolio() {
         id='projects'
         title='Notable Projects'
       >
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto'>
-          <DetailCard
-            title='File Browser (Open-Source)'
-            description='OPS/Microsoft AI Hackathon'
-            date='2023 - Present'
-            content={
-              <ul className='list-disc list-inside space-y-2'>
-                <li>Contributed to 50% of the migration to Vue3</li>
-                <li>Created custom context menu with actions</li>
-                <li>Added Arabic language translation</li>
-              </ul>
-            }
-          />
-
-          <DetailCard
-            title='WellSphere AI'
-            description='OPS/Microsoft AI Hackathon'
-            date='2024'
-            content={
-              <ul className='list-disc list-inside space-y-2'>
-                <li>Developed Azure Copilot assistant for mental health</li>
-                <li>Created Power Pages UI</li>
-                <li>Integrated PowerBI dashboard</li>
-              </ul>
-            }
-          />
-        </div>
+        <StaggerList
+          className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto'
+          items={[
+            {
+              title: "File Browser (Open-Source)",
+              description: "OPS/Microsoft AI Hackathon",
+              date: "2023 - Present",
+              list: [
+                "Contributed to 50% of the migration to Vue3",
+                "Created custom context menu with actions",
+                "Added Arabic language translation",
+              ],
+            },
+            {
+              title: "WellSphere AI",
+              description: "OPS/Microsoft AI Hackathon",
+              date: "2024",
+              list: [
+                "Developed Azure Copilot assistant for mental health",
+                "Created Power Pages UI",
+                "Integrated PowerBI dashboard",
+              ],
+            },
+          ]}
+          renderComponent={(project) => (
+            <DetailCard
+              {...project}
+              content={project.list.map((text) => (
+                <ul className='list-disc list-inside space-y-2'>
+                  <li>{text}</li>
+                </ul>
+              ))}
+            />
+          )}
+        />
       </SectionWrapper>
 
       {/* Education Section */}
@@ -239,21 +247,26 @@ export default function Portfolio() {
         id='education'
         title='Education'
       >
-        <DetailCard
-          className='max-w-2xl mx-auto border-none'
-          title='Seneca College'
-          description='Honors Bachelor of Technology in Software Development'
-          date='2020 - 2024'
-          content={
-            <>
-              <h3 className='font-semibold mb-2'>Achievements</h3>
-              <ul className='list-disc list-inside space-y-2'>
-                <li>President's Honor List for 6 semesters</li>
-                <li>1st place in MERN stack UI/UX competition</li>
-                <li>Tutored 5-7 classmates each semester</li>
-              </ul>
-            </>
-          }
+        <StaggerList
+          items={[""]}
+          renderComponent={() => (
+            <DetailCard
+              className='max-w-2xl mx-auto border-none'
+              title='Seneca College'
+              description='Honors Bachelor of Technology in Software Development'
+              date='2020 - 2024'
+              content={
+                <>
+                  <h3 className='font-semibold mb-2'>Achievements</h3>
+                  <ul className='list-disc list-inside space-y-2'>
+                    <li>President's Honor List for 6 semesters</li>
+                    <li>1st place in MERN stack UI/UX competition</li>
+                    <li>Tutored 5-7 classmates each semester</li>
+                  </ul>
+                </>
+              }
+            />
+          )}
         />
       </SectionWrapper>
 
@@ -265,7 +278,7 @@ export default function Portfolio() {
           className='flex flex-wrap flex-col md:flex-row justify-center items-center gap-10 max-w-5xl mx-auto'
           items={contactLinks}
           renderComponent={(contact) => (
-            <motion.div className="inline"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
