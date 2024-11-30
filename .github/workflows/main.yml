@@ -1,4 +1,4 @@
-name: Deploy React Vite App
+name: Deploy Portfolio
 
 on:
   push:
@@ -26,6 +26,11 @@ jobs:
     
     - name: Install dependencies
       run: pnpm install
+
+    - name: Configure Git Identity
+      run: |
+        git config --global user.name 'Omar Hussein'
+        git config --global user.email '77292466+omalk98@users.noreply.github.com'
     
-    - name: Deploy using package.json script
+    - name: Deploy Portfolio
       run: pnpm run deploy
