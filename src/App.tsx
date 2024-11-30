@@ -12,7 +12,7 @@ import SectionWrapper from "@/components/section-wrapper";
 import { Contact } from "@/types";
 import { Timeline } from "@/components/ui/timeline";
 import GlowCard from "@/components/ui/glow-card";
-import { languageTools } from "@/data/skills";
+import { skills } from "@/data";
 import TechStackCard from "@/components/tech-stack-card";
 import StaggerList from "./components/stagger-list";
 import GlowListItem from "./components/glow-list-item";
@@ -134,7 +134,7 @@ export default function Portfolio() {
       >
         <StaggerList
           className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto'
-          items={languageTools}
+          items={skills}
           renderComponent={(tool) => (
             <TechStackCard
               key={tool.title}
@@ -177,6 +177,7 @@ export default function Portfolio() {
                       <span>{exp.type}</span>
                     </div>
                   }
+                  badges={exp.technologies}
                   content={
                     <ul className='list-none space-y-2'>
                       {exp.highlights.map((highlight, i) => (

@@ -30,7 +30,7 @@ export interface Project {
 export interface BadgeLinkProps {
   text: string;
   href?: string;
-  icon?: IconType | null;
+  icon?: IconType;
   color?: string;
   textColor?: string;
   className?: string;

@@ -7,12 +7,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { BadgeLinkProps } from "@/types";
+import BadgeLink from "./badge-link";
 
 export default function DetailCard({
   title,
   description,
   content,
   date,
+  badges,
   className,
   variant = "light",
   children,
@@ -22,6 +25,7 @@ export default function DetailCard({
   content?: React.ReactNode;
   description?: React.ReactNode;
   date?: React.ReactNode;
+  badges?: BadgeLinkProps[];
   className?: string;
   variant?: "light" | "dark";
   children?: React.ReactNode;
@@ -59,6 +63,17 @@ export default function DetailCard({
               </span>
             )}
           </div>
+          {badges && (
+            <div className="flex flex-wrap">
+              {badges.map((badge, index) => (
+                <BadgeLink
+                  className='m-1'
+                  key={`card-badge-${index}`}
+                  {...badge}
+                />
+              ))}
+            </div>
+          )}
         </CardHeader>
         {content && (
           <CardContent className='text-gray-800 dark:text-gray-300'>
