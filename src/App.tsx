@@ -11,7 +11,6 @@ import DetailCard from "@/components/detail-card";
 import SectionWrapper from "@/components/section-wrapper";
 import { Contact } from "@/types";
 import { Timeline } from "@/components/ui/timeline";
-import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import GlowCard from "@/components/ui/glow-card";
 import { languageTools } from "@/data/skills";
 import TechStackCard from "@/components/tech-stack-card";
@@ -204,26 +203,7 @@ export default function Portfolio() {
                       ))}
                     </ul>
                   }
-                >
-                  {import.meta.env.PROD && (
-                    <div className='h-full w-full absolute inset-0 bg-yellow-800'>
-                      <CanvasRevealEffect
-                        animationSpeed={2}
-                        containerClassName='bg-emerald-900 hidden dark:block'
-                        dotSize={2}
-                      />
-                      <div className='absolute hidden dark:block inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/90' />
-
-                      <CanvasRevealEffect
-                        animationSpeed={2}
-                        containerClassName='bg-yellow-600 dark:none'
-                        dotSize={2}
-                        colors={[[255, 255, 240]]}
-                      />
-                      <div className='absolute dark:hidden inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-gray-200/70' />
-                    </div>
-                  )}
-                </DetailCard>
+                />
               </motion.div>
             ),
           }))}
