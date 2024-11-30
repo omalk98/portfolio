@@ -75,6 +75,7 @@ export default function Portfolio() {
                 "Creating efficient microservices",
                 "Solving complex technical challenges",
                 "Passionate about clean code",
+                "Obsessed with performance",
               ]}
               typeSpeed={55}
               backSpeed={40}
