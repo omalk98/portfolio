@@ -16,7 +16,7 @@ export const experience = [
   },
   {
     company: "Ontario Treasury Board Secretariat",
-    role: "Web Developer",
+    role: "Software Developer",
     type: "Co-Op",
     duration: "Jan 2024 - Apr 2024",
     location: "Toronto, ON",

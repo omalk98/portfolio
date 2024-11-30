@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function StaggerList<T>({
@@ -9,7 +10,7 @@ export default function StaggerList<T>({
   ...props
 }: {
   items: T[];
-  renderComponent: (item: T) => JSX.Element;
+  renderComponent: (item: T, index: number) => React.ReactNode;
   duration?: number;
   delay?: number;
   className?: string;
@@ -34,7 +35,7 @@ export default function StaggerList<T>({
               }}
               exit={{ opacity: 0, y: 100, transition: { delay: delay } }}
             >
-              {renderComponent(item)}
+              {renderComponent(item, index)}
             </motion.div>
           ))}
         </div>
@@ -61,7 +62,7 @@ export default function StaggerList<T>({
                 transition: { delay: delay },
               }}
             >
-              {renderComponent(item)}
+              {renderComponent(item, index)}
             </motion.div>
           ))}
         </div>

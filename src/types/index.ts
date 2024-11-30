@@ -33,4 +33,5 @@ export interface BadgeLinkProps {
   icon?: IconType | null;
   color?: string;
   textColor?: string;
+  className?: string;
 }

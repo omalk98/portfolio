@@ -10,6 +10,7 @@ export default function BadgeLink({
   icon: Icon,
   color = "#16a34a",
   textColor,
+  className
 }: BadgeLinkProps) {
   const isDark = useDarkMode();
   return (
@@ -19,7 +20,8 @@ export default function BadgeLink({
         variant='outline'
         className={cn(
           "pl-2 rounded-full transition-transform duration-150 ease-in-out hover:scale-110 shadow-md",
-          href ? "cursor-pointer" : "cursor-default"
+          href ? "cursor-pointer" : "cursor-default",
+          className
         )}
         style={{
           color: textColor ?? "#FFFFFF",

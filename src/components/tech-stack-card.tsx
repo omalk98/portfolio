@@ -45,7 +45,7 @@ export default function TechStackCard({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className='flex flex-wrap gap-2'>
+        <div className='flex flex-wrap gap-2 items-center'>
           {badges.map((badge, index) => (
             <BadgeLink
               key={index}

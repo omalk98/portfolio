@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React from "react";
 import {
   Card,
   CardContent,
@@ -18,13 +18,13 @@ export default function DetailCard({
   children,
   ...props
 }: {
-  title?: string | ReactNode;
-  content?: string | ReactNode;
-  description?: string | ReactNode;
-  date?: string | ReactNode;
+  title?: React.ReactNode;
+  content?: React.ReactNode;
+  description?: React.ReactNode;
+  date?: React.ReactNode;
   className?: string;
   variant?: "light" | "dark";
-  children?: ReactNode;
+  children?: React.ReactNode;
   props?: typeof Card;
 }) {
   return (
@@ -40,9 +40,13 @@ export default function DetailCard({
     >
       <div className='relative z-10'>
         <CardHeader>
-          <div className='flex justify-between items-start font-semibold'>
-            <div>
-              {title && <CardTitle className='text-xl mb-1'>{title}</CardTitle>}
+          <div className='flex justify-between items-start'>
+            <div className='w-full'>
+              {title && (
+                <CardTitle className='text-2xl font-semibold'>
+                  {title}
+                </CardTitle>
+              )}
               {description && (
                 <CardDescription className='text-gray-900 dark:text-gray-400'>
                   {description}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { LuDownload, LuCheck, LuLoader } from "react-icons/lu";
 import { motion } from "framer-motion";
 import {
@@ -15,18 +15,37 @@ const DownloadButton = ({
   fileName,
   text,
   className,
+  tooltip,
+  newWindow,
 }: {
   href: string;
   fileName: string;
   text: string;
   className?: string;
+  tooltip?: string | React.ReactNode;
+  newWindow?: boolean;
 }) => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const downloadComplete = () => {
+    setIsDownloading(false);
+    setIsComplete(true);
+    setTimeout(() => {
+      setIsComplete(false);
+      setProgress(0);
+    }, 3000); // Reset after 3 seconds
+  };
+
   const handleDownload = async () => {
     try {
+      if (newWindow) {
+        window.open(href, "_blank");
+        downloadComplete();
+        return;
+      }
+
       setIsDownloading(true);
 
       const response = await fetch(href);
@@ -74,18 +93,14 @@ const DownloadButton = ({
       setIsDownloading(false);
       setProgress(0);
     }
-    setIsDownloading(false);
-    setIsComplete(true);
-    setTimeout(() => {
-      setIsComplete(false);
-      setProgress(0);
-    }, 3000); // Reset after 3 seconds
+
+    downloadComplete();
   };
 
   return (
     <TooltipProvider delayDuration={300}>
       <Tooltip>
-        <TooltipTrigger asChild >
+        <TooltipTrigger asChild>
           <motion.button
             onClick={handleDownload}
             disabled={isDownloading || isComplete}
@@ -100,8 +115,9 @@ const DownloadButton = ({
               isDownloading && "cursor-wait border-blue-500",
               className
             )}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ duration: 0.1 }}
           >
             {/* Progress bar background */}
             {isDownloading && (
@@ -188,9 +204,7 @@ const DownloadButton = ({
             </div>
           </motion.button>
         </TooltipTrigger>
-        <TooltipContent sideOffset={10}>
-          <p>Hire Me!</p>
-        </TooltipContent>
+        <TooltipContent sideOffset={10}>{tooltip}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 interface BouncingListProps<T> {
   items: T[];
-  renderComponent: (item: T) => JSX.Element;
+  renderComponent: (item: T) => React.ReactNode;
   mode?: "forward" | "reverse" | "loopback";
   step?: number;
   duration?: number;

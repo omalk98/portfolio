@@ -16,6 +16,7 @@ import GlowCard from "@/components/ui/glow-card";
 import { languageTools } from "@/data/skills";
 import TechStackCard from "@/components/tech-stack-card";
 import StaggerList from "./components/stagger-list";
+import GlowListItem from "./components/glow-list-item";
 
 export default function Portfolio() {
   useEffect(() => {
@@ -84,10 +85,13 @@ export default function Portfolio() {
           </div>
           <div className='my-10'>
             <DownloadButton
-              href='./resume.pdf'
+              href='https://drive.google.com/uc?export=download&id=1SipnZucXQ5cM2SaJxPC5XYLBoUA-GjkD'
+              newWindow
+              // href='/resume.pdf'
               fileName='Omar_Hussein-Resume.pdf'
               text='Download Resume'
               className='mx-auto'
+              tooltip={<p>Hire Me!</p>}
             />
           </div>
 
@@ -113,10 +117,12 @@ export default function Portfolio() {
           </div>
 
           <p className='text-lg text-gray-800 dark:text-gray-300 max-w-xl mx-auto'>
-            Software Developer with expertise in web development, microservices,
-            and cloud solutions. Proficient in multiple programming languages
-            and tools, with a passion for performance, scalability, automation,
-            and code structure.
+            Software Engineer with expertise in full-stack development,
+            microservices, and cloud solutions. Proficient in multiple
+            programming languages and tools, with a passion for performance,
+            scalability, automation, and code structure. Known for
+            problem-solving, teamwork, and an eagerness to learn new skills and
+            technologies.
           </p>
         </div>
       </motion.div>
@@ -158,19 +164,42 @@ export default function Portfolio() {
                 className='relative'
               >
                 <DetailCard
-                  key={exp.company}
                   className='shadow-lg dark:shadow-white/20'
-                  title={exp.company}
-                  description={
-                    <>
-                      {exp.role} <i>({exp.type})</i> | {exp.location}
-                    </>
+                  title={
+                    <div className='flex justify-between items-baseline'>
+                      <span>{exp.role}</span>
+                      <i className='text-lg'>{exp.location}</i>
+                    </div>
                   }
-                  date={exp.duration}
+                  description={
+                    <div className='flex justify-between items-center italic text-yellow-600 dark:text-cyan-600 drop-shadow-[0_0_10px_rgba(234,179,8,0.7)] dark:drop-shadow-[0_0_10px_rgba(8,145,178,0.7)]'>
+                      <span>{exp.company}</span>
+                      <span>{exp.type}</span>
+                    </div>
+                  }
                   content={
-                    <ul className='list-disc list-inside space-y-2'>
+                    <ul className='list-none space-y-2'>
                       {exp.highlights.map((highlight, i) => (
-                        <li key={i}>{highlight}</li>
+                        <li key={i}>
+                          <motion.div
+                            initial={{ opacity: 0, x: 100 }}
+                            whileInView={{
+                              opacity: 1,
+                              x: 0,
+                              transition: {
+                                duration: 0.6,
+                                delay: 0.8 + i * 0.2,
+                              },
+                            }}
+                            exit={{
+                              opacity: 0,
+                              x: 100,
+                              transition: { duration: 0, delay: 0.8 },
+                            }}
+                          >
+                            <GlowListItem>{highlight}</GlowListItem>
+                          </motion.div>
+                        </li>
                       ))}
                     </ul>
                   }
@@ -231,10 +260,13 @@ export default function Portfolio() {
           ]}
           renderComponent={(project) => (
             <DetailCard
+              key={project.title}
               {...project}
               content={project.list.map((text) => (
-                <ul className='list-disc list-inside space-y-2'>
-                  <li>{text}</li>
+                <ul className='list-none space-y-2'>
+                  <li>
+                    <GlowListItem>{text}</GlowListItem>
+                  </li>
                 </ul>
               ))}
             />
@@ -258,10 +290,22 @@ export default function Portfolio() {
               content={
                 <>
                   <h3 className='font-semibold mb-2'>Achievements</h3>
-                  <ul className='list-disc list-inside space-y-2'>
-                    <li>President's Honor List for 6 semesters</li>
-                    <li>1st place in MERN stack UI/UX competition</li>
-                    <li>Tutored 5-7 classmates each semester</li>
+                  <ul className='list-none space-y-2'>
+                    <li>
+                      <GlowListItem>
+                        President's Honor List for 6 semesters
+                      </GlowListItem>
+                    </li>
+                    <li>
+                      <GlowListItem>
+                        1st place in MERN stack UI/UX competition
+                      </GlowListItem>
+                    </li>
+                    <li>
+                      <GlowListItem>
+                        Tutored 5-7 classmates each semester
+                      </GlowListItem>
+                    </li>
                   </ul>
                 </>
               }
@@ -275,7 +319,7 @@ export default function Portfolio() {
         title='Get in Touch'
       >
         <StaggerList
-          className='flex flex-wrap flex-col md:flex-row justify-center items-center gap-10 max-w-5xl mx-auto'
+          className='relative flex flex-wrap flex-col md:flex-row justify-center items-center gap-10 max-w-5xl mx-auto'
           items={contactLinks}
           renderComponent={(contact) => (
             <motion.div

@@ -117,7 +117,7 @@ export const languageTools = [
   },
   {
     title: "Databases",
-    icons: [{ icon: FaDatabase, color: "" }],
+    icons: [{ icon: FaDatabase, color: "#B91C1C" }],
     badges: [
       { text: "MySQL", icon: SiMysql, color: "#4479A1" },
       { text: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
