@@ -26,12 +26,6 @@ jobs:
     
     - name: Install dependencies
       run: pnpm install
-
-    - name: Configure Git Identity
-      run: |
-        git config --global user.name 'Omar Hussein'
-        git config --global user.email '77292466+omalk98@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
