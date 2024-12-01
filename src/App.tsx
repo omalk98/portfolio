@@ -63,7 +63,7 @@ export default function Portfolio() {
           {/* Name and Title */}
           <h1 className='text-4xl font-bold mb-2'>Omar Hussein</h1>
           <h2 className='text-2xl text-gray-500 dark:text-gray-400 mb-4'>
-            Software Developer
+            Software Engineer
           </h2>
 
           {/* Typed Text */}
@@ -73,8 +73,9 @@ export default function Portfolio() {
                 "Building scalable web applications",
                 "Creating efficient microservices",
                 "Solving complex technical challenges",
+                "Obsessed with automation",
+                "Optimizing performance for fast solutions",
                 "Passionate about clean code",
-                "Obsessed with performance",
               ]}
               typeSpeed={55}
               backSpeed={40}
@@ -177,7 +178,8 @@ export default function Portfolio() {
                       <span>{exp.type}</span>
                     </div>
                   }
-                  badges={exp.technologies}
+                  badges={exp.technologies.top}
+                  badgeCarousel={[...exp.technologies.rest, ...exp.technologies.top]}
                   content={
                     <ul className='list-none space-y-2'>
                       {exp.highlights.map((highlight, i) => (

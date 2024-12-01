@@ -10,7 +10,8 @@ export default function BadgeLink({
   icon: Icon,
   color = "#16a34a",
   textColor,
-  className
+  size = "sm",
+  className,
 }: BadgeLinkProps) {
   const isDark = useDarkMode();
   return (
@@ -19,8 +20,13 @@ export default function BadgeLink({
         title={text}
         variant='outline'
         className={cn(
-          "pl-2 rounded-full transition-transform duration-150 ease-in-out hover:scale-110 shadow-md",
+          "rounded-full transition-transform duration-150 ease-in-out hover:scale-110 shadow-md text-nowrap",
           href ? "cursor-pointer" : "cursor-default",
+          size === "sm"
+            ? "text-xs pl-2"
+            : size === "md"
+            ? "text-sm"
+            : "text-lg px-3",
           className
         )}
         style={{
@@ -32,8 +38,8 @@ export default function BadgeLink({
       >
         {Icon && (
           <Icon
-            size={16}
-            className='mr-1'
+            size={size === "sm" ? 16 : size === "md" ? 20 : 26}
+            className={size === "sm" ? "mr-1" : size === "md" ? "mr-2" : "mr-3"}
           />
         )}
         {text}

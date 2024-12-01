@@ -9,6 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import { BadgeLinkProps } from "@/types";
 import BadgeLink from "./badge-link";
+import InfiniteScroll from "./infinate-scroll";
 
 export default function DetailCard({
   title,
@@ -16,6 +17,7 @@ export default function DetailCard({
   content,
   date,
   badges,
+  badgeCarousel,
   className,
   variant = "light",
   children,
@@ -26,6 +28,7 @@ export default function DetailCard({
   description?: React.ReactNode;
   date?: React.ReactNode;
   badges?: BadgeLinkProps[];
+  badgeCarousel?: BadgeLinkProps[];
   className?: string;
   variant?: "light" | "dark";
   children?: React.ReactNode;
@@ -34,7 +37,7 @@ export default function DetailCard({
   return (
     <Card
       className={cn(
-        "border-none h-full relative overflow-hidden",
+        "border-none h-full w-full relative overflow-hidden",
         variant === "light"
           ? "bg-slate-200/50 dark:bg-gray-700/40"
           : "bg-slate-400/50 dark:bg-gray-800/50",
@@ -43,7 +46,7 @@ export default function DetailCard({
       {...props}
     >
       <div className='relative z-10'>
-        <CardHeader>
+        <CardHeader className='pb-2.5'>
           <div className='flex justify-between items-start'>
             <div className='w-full'>
               {title && (
@@ -64,15 +67,33 @@ export default function DetailCard({
             )}
           </div>
           {badges && (
-            <div className="flex flex-wrap">
+            <div className='flex flex-wrap pt-2'>
               {badges.map((badge, index) => (
                 <BadgeLink
-                  className='m-1'
+                  size='lg'
+                  className={cn(
+                    "mx-2 my-1",
+                    index === 0  && "ml-0",
+                    index === badges.length - 1  && "mr-0"
+                  )}
                   key={`card-badge-${index}`}
                   {...badge}
                 />
               ))}
             </div>
+          )}
+          {badgeCarousel && (
+            <InfiniteScroll
+              speed='slow'
+              items={badgeCarousel}
+              renderComponent={(item) => (
+                <BadgeLink
+                  size='sm'
+                  className='m-1'
+                  {...item}
+                />
+              )}
+            />
           )}
         </CardHeader>
         {content && (

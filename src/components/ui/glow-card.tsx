@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 export default function GlowCard({
   className,
   children,
-  gradientStart = "from-yellow-700 dark:from-blue-500",
-  gradientEnd = "to-green-200 dark:to-teal-500",
+  gradientStart = "from-yellow-300 dark:from-blue-500",
+  gradientEnd = "to-amber-400 dark:to-teal-500",
   ...props
 }: {
   className?: string;

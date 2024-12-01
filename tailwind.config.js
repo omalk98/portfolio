@@ -56,6 +56,17 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      keyframes: {
+        'infinite-scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
+      animation: {
+        'infinite-scroll-slow': 'infinite-scroll 50s linear infinite',
+        'infinite-scroll': 'infinite-scroll 35s linear infinite',
+        'infinite-scroll-fast': 'infinite-scroll 20s linear infinite',
+      }
     },
   },
   plugins: [
