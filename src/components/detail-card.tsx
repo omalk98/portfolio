@@ -69,16 +69,28 @@ export default function DetailCard({
           {badges && (
             <div className='flex flex-wrap pt-2'>
               {badges.map((badge, index) => (
+                <>
                 <BadgeLink
                   size='lg'
                   className={cn(
-                    "mx-2 my-1",
+                    "mx-2 my-1 hidden md:inline-flex",
                     index === 0  && "ml-0",
                     index === badges.length - 1  && "mr-0"
                   )}
                   key={`card-badge-${index}`}
                   {...badge}
                 />
+                <BadgeLink
+                  size='md'
+                  className={cn(
+                    "mx-2 my-1 md:hidden",
+                    index === 0  && "ml-0",
+                    index === badges.length - 1  && "mr-0"
+                  )}
+                  key={`card-badge-${index}`}
+                  {...badge}
+                />
+                </>
               ))}
             </div>
           )}
