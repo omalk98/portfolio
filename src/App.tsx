@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, lazy, useState } from "react";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import Layout from "@/layout";
@@ -16,11 +16,19 @@ import { skills } from "@/data";
 import TechStackCard from "@/components/tech-stack-card";
 import StaggerList from "./components/stagger-list";
 import GlowListItem from "./components/glow-list-item";
-import { track } from "./api";
+import { getMapPoints, track } from "./api";
+const WorldMap = lazy(() => import("./components/ui/world-map"));
 
 export default function Portfolio() {
+  const [mapData, setMapData] = useState<
+    { start: { lat: number; lng: number }; end: { lat: number; lng: number } }[]
+  >([]);
   useEffect(() => {
-    track();
+    async function fetchData() {
+      track();
+      setMapData(await getMapPoints());
+    }
+    fetchData();
   }, []);
   return (
     <Layout>
@@ -117,6 +125,8 @@ export default function Portfolio() {
           </p>
         </div>
       </motion.div>
+
+      <WorldMap dots={mapData} />
 
       {/* Skills Section */}
       <SectionWrapper
