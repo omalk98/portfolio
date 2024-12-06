@@ -17,6 +17,7 @@ export default function Footer({
         <img
           src='/image/omar-bitmoji.png'
           className="w-[24px] h-[24px] mx-2 mt-[-2px]"
+          loading="lazy"
         />
         &copy; {new Date().getFullYear()}
       </p>

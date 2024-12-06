@@ -16,21 +16,11 @@ import { skills } from "@/data";
 import TechStackCard from "@/components/tech-stack-card";
 import StaggerList from "./components/stagger-list";
 import GlowListItem from "./components/glow-list-item";
+import { track } from "./api";
 
 export default function Portfolio() {
   useEffect(() => {
-    if (
-      import.meta.env.VITE_MAILER_URL &&
-      import.meta.env.VITE_AUTHORIZATION &&
-      import.meta.env.PROD
-    )
-      fetch(import.meta.env.VITE_MAILER_URL, {
-        method: "GET",
-        headers: {
-          Authorization: import.meta.env.VITE_AUTHORIZATION,
-          "Content-Type": "application/json",
-        },
-      });
+    track();
   }, []);
   return (
     <Layout>
@@ -161,6 +151,7 @@ export default function Portfolio() {
                 key={exp.company}
                 initial={{ opacity: 0, x: 200 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className='relative'
               >
@@ -179,7 +170,10 @@ export default function Portfolio() {
                     </div>
                   }
                   badges={exp.technologies.top}
-                  badgeCarousel={[...exp.technologies.rest, ...exp.technologies.top]}
+                  badgeCarousel={[
+                    ...exp.technologies.rest,
+                    ...exp.technologies.top,
+                  ]}
                   content={
                     <ul className='list-none space-y-2'>
                       {exp.highlights.map((highlight, i) => (
@@ -194,11 +188,12 @@ export default function Portfolio() {
                                 delay: 0.8 + i * 0.2,
                               },
                             }}
-                            exit={{
-                              opacity: 0,
-                              x: 100,
-                              transition: { duration: 0, delay: 0.8 },
-                            }}
+                            viewport={{ once: true }}
+                            // exit={{
+                            //   opacity: 0,
+                            //   x: 100,
+                            //   transition: { duration: 0, delay: 0.8 },
+                            // }}
                           >
                             <GlowListItem>{highlight}</GlowListItem>
                           </motion.div>

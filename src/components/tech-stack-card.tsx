@@ -35,7 +35,7 @@ export default function TechStackCard({
             <div className='flex items-center gap-1'>
               {icons.map((Icon, index) => (
                 <Icon.icon
-                  key={`tech-header-icon-${index}`}
+                  key={`tech-header-icon-${title}-${index}`}
                   className='w-6 h-6 mx-1'
                   style={{ color: Icon.color }}
                 />
@@ -49,7 +49,7 @@ export default function TechStackCard({
         <div className='flex flex-wrap gap-2 items-center'>
           {badges.map((badge, index) => (
             <BadgeLink
-              key={`tech-badge-${index}`}
+              key={`tech-badge-${title}-${index}`}
               text={badge.text}
               icon={badge.icon ?? LuCheck}
               color={badge.color}

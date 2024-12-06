@@ -35,7 +35,7 @@ export default function InfiniteScroll<T>({
       <div
         ref={ref}
         className={cn(
-          "inline-flex w-max absolute",
+          "inline-flex w-max min-w-[0] absolute",
           speedClasses[speed]
         )}
       >

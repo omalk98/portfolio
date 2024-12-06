@@ -7,6 +7,7 @@ export default function StaggerList<T>({
   renderComponent,
   duration = 0.8,
   delay = 0.2,
+  once = true,
   ...props
 }: {
   items: T[];
@@ -14,6 +15,7 @@ export default function StaggerList<T>({
   duration?: number;
   delay?: number;
   className?: string;
+  once?: boolean;
   props?: React.HTMLAttributes<HTMLDivElement>;
 }) {
   return (
@@ -33,6 +35,7 @@ export default function StaggerList<T>({
                 y: 0,
                 transition: { duration: duration, delay: delay * index },
               }}
+              viewport={{ once: once }}
               exit={{ opacity: 0, y: 100, transition: { delay: delay } }}
             >
               {renderComponent(item, index)}
@@ -56,6 +59,7 @@ export default function StaggerList<T>({
                 x: 0,
                 transition: { duration: duration, delay: delay },
               }}
+              viewport={{ once: once }}
               exit={{
                 opacity: 0,
                 x: index % 2 ? 200 : -200,

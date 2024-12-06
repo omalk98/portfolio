@@ -87,7 +87,7 @@ export default function DetailCard({
                     index === 0  && "ml-0",
                     index === badges.length - 1  && "mr-0"
                   )}
-                  key={`card-badge-${index}`}
+                  key={`card-badge-m-${index}`}
                   {...badge}
                 />
                 </>
