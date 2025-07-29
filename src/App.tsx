@@ -1,4 +1,4 @@
-import { useEffect, lazy, useState } from "react";
+import { useEffect, lazy, useState, Suspense, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import Layout from "@/layout";
@@ -23,10 +23,30 @@ export default function Portfolio() {
   const [mapData, setMapData] = useState<
     { start: { lat: number; lng: number }; end: { lat: number; lng: number } }[]
   >([]);
+  const memoMapData = useMemo(() => (
+    <Suspense
+        fallback={
+          <div className='w-full h-64 flex items-center justify-center bg-gray-200 dark:bg-gray-800'>
+            <svg className="animate-spin h-10 w-10 text-yellow-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+          </div>
+        }
+      >
+        <WorldMap dots={mapData} />
+      </Suspense>
+  ), [mapData]);
   useEffect(() => {
     async function fetchData() {
       track();
-      setMapData(await getMapPoints());
+      const mapPoints = await getMapPoints();
+      setMapData(
+        mapPoints.map((point) => ({
+          start: { lat: point.start.lat, lng: point.start.lng },
+          end: { lat: point.end.lat, lng: point.end.lng },
+        }))
+      );
     }
     fetchData();
   }, []);
@@ -126,7 +146,9 @@ export default function Portfolio() {
         </div>
       </motion.div>
 
-      <WorldMap dots={mapData} />
+      {memoMapData}
+
+      {/* About Section */}
 
       {/* Skills Section */}
       <SectionWrapper
