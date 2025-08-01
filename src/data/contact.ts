@@ -22,8 +22,8 @@ export const contactLinks: Contact[] = [
   {
     icon: LuPhone,
     label: "Phone",
-    value: "+1 (416) 434-4349",
-    href: "tel:+14164344349",
+    value: "+1 *** *** ****",
+    href: "tel:+1**********",
     // green-400
     color: "#4ade80",
   },

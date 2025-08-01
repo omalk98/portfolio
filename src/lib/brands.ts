@@ -57,8 +57,16 @@ import {
   SiGooglesearchconsole,
   SiCpanel,
   SiMinio,
+  SiAngular,
+  SiElectron,
+  SiSpring,
+  SiDebian,
+  SiMariadb,
+  SiKalilinux,
+  SiUbuntu,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaWindows } from "react-icons/fa";
+import { VscAzure } from "react-icons/vsc";
 
 // Languages
 export const javaScript = {
@@ -152,6 +160,18 @@ export const nuxtJs = {
   color: "#00DC82",
 };
 
+export const angular = {
+  text: "Angular",
+  icon: SiAngular,
+  color: "#DD0031",
+};
+
+export const electronJs = {
+  text: "Electron.js",
+  icon: SiElectron,
+  color: "#47848F",
+};
+
 export const expressJs = {
   text: "Express.js",
   icon: SiExpress,
@@ -225,12 +245,51 @@ export const mediaPipe = {
   color: "#0097A7",
 };
 
-// Cloud Tools
+// Java Tools
+export const spring = {
+  text: "Spring",
+  icon: SiSpring,
+  color: "#6DB33F",
+};
+
+export const micronaut = {
+  text: "Micronaut",
+  icon: undefined,
+  color: "#00BFB3",
+};
+
+// Operating Systems
+export const windows = {
+  text: "Windows",
+  icon: FaWindows,
+  color: "#00A4EF",
+};
+
 export const linux = {
   text: "Linux",
   icon: SiLinux,
   color: "#FCC624",
 };
+
+export const debian = {
+  text: "Debian",
+  icon: SiDebian,
+  color: "#A80031",
+};
+
+export const ubuntu = {
+  text: "Ubuntu",
+  icon: SiUbuntu,
+  color: "#E95420",
+};
+
+export const kaliLinux = {
+  text: "Kali Linux",
+  icon: SiKalilinux,
+  color: "#557C94",
+};
+
+// Cloud Tools
 
 export const docker = {
   text: "Docker",
@@ -258,7 +317,7 @@ export const gcp = {
 
 export const azure = {
   text: "Azure",
-  icon: undefined,
+  icon: VscAzure,
   color: "#007FFF",
 };
 
@@ -309,6 +368,12 @@ export const postgreSQL = {
   text: "PostgreSQL",
   icon: SiPostgresql,
   color: "#336791",
+};
+
+export const mariaDB = {
+  text: "MariaDB",
+  icon: SiMariadb,
+  color: "#003545",
 };
 
 export const sqLite = {

@@ -1,5 +1,5 @@
 import * as brands from "@/lib/brands";
-import { LuBinary, LuCloud } from "react-icons/lu";
+import { LuBinary, LuCloud, LuComputer } from "react-icons/lu";
 import { FaTools, FaDatabase, FaConnectdevelop } from "react-icons/fa";
 
 export const skills = [
@@ -26,6 +26,7 @@ export const skills = [
       brands.nodeJs,
       { ...brands.reactJs, textColor: "" },
       brands.nextJs,
+      brands.angular,
       brands.vueJs,
       brands.nuxtJs,
       brands.expressJs,
@@ -52,7 +53,6 @@ export const skills = [
     title: "Cloud Tools",
     icons: [{ icon: LuCloud, color: "#7DD3FC" }],
     badges: [
-      { ...brands.linux, textColor: "" },
       brands.docker,
       brands.kubernetes,
       { ...brands.aws, textColor: "" },
@@ -72,12 +72,24 @@ export const skills = [
     badges: [
       brands.mySQL,
       brands.postgreSQL,
+      brands.mariaDB,
       brands.sqLite,
       brands.mongoDB,
       brands.dynamoDB,
       brands.redis,
       brands.s3,
       brands.minIO,
+    ],
+  },
+  {
+    title: "Operating Systems",
+    icons: [{ icon: LuComputer, color: "#3B82F6" }],
+    badges: [
+      { ...brands.linux, textColor: "" },
+      brands.windows,
+      brands.debian,
+      brands.ubuntu,
+      brands.kaliLinux,
     ],
   },
   {

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-  // lazy, useState, Suspense, useMemo 
+// lazy, useState, Suspense, useMemo
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import Layout from "@/layout";
@@ -178,7 +178,9 @@ export default function Portfolio() {
       >
         <Timeline
           data={experience.map((exp) => ({
-            title: exp.duration,
+            title: `${exp.role[exp.role.length - 1].duration.start} - ${
+              exp.role[0].duration.end
+            }`,
             content: (
               <motion.div
                 key={exp.company}
@@ -191,15 +193,60 @@ export default function Portfolio() {
                 <DetailCard
                   className='shadow-lg dark:shadow-white/20'
                   title={
-                    <div className='flex justify-between items-baseline'>
-                      <span>{exp.role}</span>
-                      <i className='text-lg'>{exp.location}</i>
+                    <div className='flex justify-between items-center'>
+                      <div className='flex items-center gap-4'>
+                        <motion.div
+                          animate={{ rotateY: [0, 360] }}
+                          transition={{
+                            duration: 3,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                            repeatDelay: 2,
+                          }}
+                        >
+                          <Avatar
+                            className={`w-12 h-12 border-2 border-yellow-500 dark:border-blue-500 ${
+                              exp.logo.bg === "dark"
+                                ? "bg-gray-600"
+                                : "bg-white"
+                            }`}
+                          >
+                            <AvatarImage
+                              src={exp.logo.src}
+                              alt={`${exp.company} logo`}
+                              className='object-contain p-1'
+                            />
+                            <AvatarFallback className='text-sm font-bold bg-gradient-to-br from-amber-100 to-amber-200 dark:from-sky-900 dark:to-sky-800 text-amber-700 dark:text-sky-200'>
+                              {(() => {
+                                const words = exp.company.split(" ");
+                                if (words.length >= 2) {
+                                  return words[0][0] + words[1][0];
+                                }
+                                return words[0][0];
+                              })()}
+                            </AvatarFallback>
+                          </Avatar>
+                        </motion.div>
+                        <div>
+                          <span className='text-xl font-bold block'>
+                            {exp.company}
+                          </span>
+                          {exp.department && (
+                            <span className='text-sm text-gray-600 dark:text-gray-400 italic'>
+                              {exp.department}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <i className='text-lg pl-2 text-nowrap'>{exp.location}</i>
                     </div>
                   }
                   description={
-                    <div className='flex justify-between items-center italic text-yellow-600 dark:text-cyan-600 drop-shadow-[0_0_10px_rgba(234,179,8,0.7)] dark:drop-shadow-[0_0_10px_rgba(8,145,178,0.7)]'>
-                      <span>{exp.company}</span>
-                      <span>{exp.type}</span>
+                    <div>
+                      <div className='flex justify-between items-center italic text-yellow-600 dark:text-cyan-600 drop-shadow-[0_0_10px_rgba(234,179,8,0.7)] dark:drop-shadow-[0_0_10px_rgba(8,145,178,0.7)]'>
+                        <span>{exp.type}</span>
+                      </div>
+                      <p className=' text-lg mt-2'>{exp.description}</p>
                     </div>
                   }
                   badges={exp.technologies.top}
@@ -208,31 +255,52 @@ export default function Portfolio() {
                     ...exp.technologies.top,
                   ]}
                   content={
-                    <ul className='list-none space-y-2'>
-                      {exp.highlights.map((highlight, i) => (
-                        <li key={i}>
-                          <motion.div
-                            initial={{ opacity: 0, x: 100 }}
-                            whileInView={{
-                              opacity: 1,
-                              x: 0,
-                              transition: {
-                                duration: 0.6,
-                                delay: 0.8 + i * 0.2,
-                              },
-                            }}
-                            viewport={{ once: true }}
-                            // exit={{
-                            //   opacity: 0,
-                            //   x: 100,
-                            //   transition: { duration: 0, delay: 0.8 },
-                            // }}
-                          >
-                            <GlowListItem>{highlight}</GlowListItem>
-                          </motion.div>
-                        </li>
+                    <div className='space-y-6'>
+                      {exp.role.map((role, roleIndex) => (
+                        <div
+                          key={roleIndex}
+                          className='relative'
+                        >
+                          {/* Role Header */}
+                          <div className='flex justify-between items-center mb-3 pb-2 border-b border-gray-300 dark:border-gray-600'>
+                            <h3 className='text-lg font-semibold text-yellow-600 dark:text-blue-400'>
+                              {role.title}
+                            </h3>
+                            <span className='text-sm text-gray-600 dark:text-gray-400 font-medium'>
+                              {role.duration.start} - {role.duration.end}
+                            </span>
+                          </div>
+
+                          {/* Role Highlights */}
+                          <ul className='list-none space-y-2'>
+                            {role.highlights.map(
+                              (highlight, highlightIndex) => (
+                                <li key={highlightIndex}>
+                                  <motion.div
+                                    initial={{ opacity: 0, x: 100 }}
+                                    whileInView={{
+                                      opacity: 1,
+                                      x: 0,
+                                      transition: {
+                                        duration: 0.6,
+                                        delay:
+                                          0.8 +
+                                          (roleIndex * role.highlights.length +
+                                            highlightIndex) *
+                                            0.1,
+                                      },
+                                    }}
+                                    viewport={{ once: true }}
+                                  >
+                                    <GlowListItem>{highlight}</GlowListItem>
+                                  </motion.div>
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   }
                 />
               </motion.div>
