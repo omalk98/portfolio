@@ -13,10 +13,11 @@ function api(url?: string, options?: RequestInit) {
   });
 }
 export function track() {
-  if (import.meta.env.PROD)
+  // if (import.meta.env.PROD)
     api().then(async (res) => {
       if (res.ok) {
         const data = (await res.json()) as { uniqueId: string };
+        if (!data.uniqueId) return;
         localStorage.setItem("uniqueId", data.uniqueId);
       }
     });
