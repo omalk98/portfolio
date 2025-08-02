@@ -1,25 +1,24 @@
 function api(url?: string, options?: RequestInit) {
-  const uniqueId = localStorage.getItem("uniqueId");
+  const vid = localStorage.getItem("vid");
 
   return fetch(import.meta.env.VITE_MAILER_URL + (url ?? ""), {
     method: "GET",
     ...options,
     headers: {
       ...options?.headers,
-      Authorization: import.meta.env.VITE_AUTHORIZATION,
+      Authorization: `${import.meta.env.VITE_AUTHORIZATION}-${vid ?? ""}`,
       "Content-Type": "application/json",
-      authid: uniqueId ?? "",
     },
   });
 }
 export function track() {
-  // if (import.meta.env.PROD)
+  if (import.meta.env.PROD)
   api().then(async (res) => {
     if (res.ok) {
       try {
-        const data = (await res.json()) as { uniqueId: string };
-        if (!data.uniqueId || localStorage.getItem("uniqueId")) return;
-        localStorage.setItem("uniqueId", data.uniqueId);
+        const data = (await res.json()) as { vid: string };
+        if (!data.vid || localStorage.getItem("vid")) return;
+        localStorage.setItem("vid", data.vid);
       } catch {
         // Handle error if JSON parsing fails
       }
