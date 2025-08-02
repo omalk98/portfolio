@@ -70,7 +70,7 @@ export const experience: Experience[] = [
       },
     ],
     description:
-      "Design & Build NATO-compliant C2 simulation solutions for military training exercises",
+      "Design and build NATO-compliant C2 simulation solutions for military training exercises",
     type: "Full-Time",
     location: "Ottawa, ON",
     technologies: {
