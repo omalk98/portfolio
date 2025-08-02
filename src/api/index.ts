@@ -14,13 +14,17 @@ function api(url?: string, options?: RequestInit) {
 }
 export function track() {
   // if (import.meta.env.PROD)
-    api().then(async (res) => {
-      if (res.ok) {
+  api().then(async (res) => {
+    if (res.ok) {
+      try {
         const data = (await res.json()) as { uniqueId: string };
-        if (!data.uniqueId) return;
+        if (!data.uniqueId || localStorage.getItem("uniqueId")) return;
         localStorage.setItem("uniqueId", data.uniqueId);
+      } catch {
+        // Handle error if JSON parsing fails
       }
-    });
+    }
+  });
 }
 
 interface MapPoint {
