@@ -362,9 +362,9 @@ export const experience: Experience[] = [
         brands.wordPress,
         { ...brands.javaScript, textColor: "" },
         brands.mySQL,
+        brands.linux,
       ],
       rest: [
-        brands.linux,
         { ...brands.sql, textColor: "" },
         brands.html,
         brands.css,

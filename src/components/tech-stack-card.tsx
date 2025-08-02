@@ -2,21 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import BadgeLink from "@/components/badge-link";
 import { BadgeLinkProps, IconType } from "@/types";
 import { LuCheck } from "react-icons/lu";
-// import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-
-//     <TooltipProvider delayDuration={300}>
-//       <Tooltip>
-//         <TooltipTrigger asChild>
-//           <BadgeLink
-//             key={index}
-//             {...badge}
-//           />
-//         </TooltipTrigger>
-//         <TooltipContent>
-//           <p>{text} Technology</p>
-//         </TooltipContent>
-//       </Tooltip>
-//     </TooltipProvider>
 
 export default function TechStackCard({
   title,

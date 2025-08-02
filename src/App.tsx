@@ -18,6 +18,8 @@ import TechStackCard from "@/components/tech-stack-card";
 import StaggerList from "./components/stagger-list";
 import GlowListItem from "./components/glow-list-item";
 import { /*getMapPoints,*/ track } from "./api";
+import { FaDesktop, FaMobile, FaServer } from "react-icons/fa";
+import AbbreviationHighlighter from "./components/abbreviation-highlighter";
 // const WorldMap = lazy(() => import("./components/ui/world-map"));
 
 export default function Portfolio() {
@@ -82,8 +84,38 @@ export default function Portfolio() {
           {/* Name and Title */}
           <h1 className='text-4xl font-bold mb-2'>Omar Hussein</h1>
           <h2 className='text-2xl text-gray-500 dark:text-gray-400 mb-4'>
-            Software Engineer
+            Software Engineer / Full-Stack Developer
           </h2>
+
+          <div className='flex flex-wrap gap-4 justify-center mb-10'>
+            {[
+              {
+                label: "Desktop",
+                icon: FaDesktop,
+              },
+              {
+                label: "Web",
+                icon: FaServer,
+              },
+              {
+                label: "Mobile",
+                icon: FaMobile,
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className='items-center gap-2 transition-all align-center justify-center hover:scale-110 rounded-full p-2'
+              >
+                <item.icon
+                  className='mx-auto'
+                  size={26}
+                />
+                <span className='text-sm font-semibold text-gray-800 dark:text-gray-200'>
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
 
           {/* Typed Text */}
           <div className='text-xl text-gray-300 mb-6 h-10'>
@@ -193,7 +225,7 @@ export default function Portfolio() {
                 <DetailCard
                   className='shadow-lg dark:shadow-white/20'
                   title={
-                    <div className='flex justify-between items-center'>
+                    <>
                       <div className='flex items-center gap-4'>
                         <motion.div
                           animate={{ rotateY: [0, 360] }}
@@ -227,26 +259,34 @@ export default function Portfolio() {
                             </AvatarFallback>
                           </Avatar>
                         </motion.div>
-                        <div>
-                          <span className='text-xl font-bold block'>
-                            {exp.company}
-                          </span>
-                          {exp.department && (
-                            <span className='text-sm text-gray-600 dark:text-gray-400 italic'>
-                              {exp.department}
-                            </span>
-                          )}
+                        <div className='w-full'>
+                          <div>
+                            <div className='text-xl font-bold block'>
+                              {exp.company}
+                            </div>
+                            {exp.department && (
+                              <div className='text-sm text-gray-600 dark:text-gray-400 italic'>
+                                {exp.department}
+                              </div>
+                            )}
+                          </div>
+                          <div className='flex items-center justify-between gap-2 text-sm'>
+                            <i className='text-nowrap'>{exp.location}</i>
+                            <div className='flex justify-between items-center italic text-yellow-600 dark:text-cyan-600 drop-shadow-[0_0_10px_rgba(234,179,8,0.7)] dark:drop-shadow-[0_0_10px_rgba(8,145,178,0.7)]'>
+                              <span>{exp.type}</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <i className='text-lg pl-2 text-nowrap'>{exp.location}</i>
-                    </div>
+                    </>
                   }
                   description={
                     <div>
-                      <div className='flex justify-between items-center italic text-yellow-600 dark:text-cyan-600 drop-shadow-[0_0_10px_rgba(234,179,8,0.7)] dark:drop-shadow-[0_0_10px_rgba(8,145,178,0.7)]'>
-                        <span>{exp.type}</span>
-                      </div>
-                      <p className=' text-lg mt-2'>{exp.description}</p>
+                      <p className=' text-lg mt-2'>
+                        <AbbreviationHighlighter>
+                          {exp.description}
+                        </AbbreviationHighlighter>
+                      </p>
                     </div>
                   }
                   badges={exp.technologies.top}
@@ -258,7 +298,7 @@ export default function Portfolio() {
                     <div className='space-y-6'>
                       {exp.role.map((role, roleIndex) => (
                         <div
-                          key={roleIndex}
+                          key={role.title}
                           className='relative'
                         >
                           {/* Role Header */}
@@ -275,7 +315,7 @@ export default function Portfolio() {
                           <ul className='list-none space-y-2'>
                             {role.highlights.map(
                               (highlight, highlightIndex) => (
-                                <li key={highlightIndex}>
+                                <li key={highlight}>
                                   <motion.div
                                     initial={{ opacity: 0, x: 100 }}
                                     whileInView={{
@@ -292,7 +332,11 @@ export default function Portfolio() {
                                     }}
                                     viewport={{ once: true }}
                                   >
-                                    <GlowListItem>{highlight}</GlowListItem>
+                                    <GlowListItem>
+                                      <AbbreviationHighlighter>
+                                        {highlight}
+                                      </AbbreviationHighlighter>
+                                    </GlowListItem>
                                   </motion.div>
                                 </li>
                               )

@@ -46,7 +46,7 @@ export default function DetailCard({
       {...props}
     >
       <div className='relative z-10'>
-        <CardHeader className='pb-2.5'>
+        <CardHeader className='pb-2.5 p-4'>
           <div className='flex justify-between items-start'>
             <div className='w-full'>
               {title && (
