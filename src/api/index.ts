@@ -17,8 +17,9 @@ export function track() {
     if (res.ok) {
       try {
         const data = (await res.json()) as { vid: string };
-        if (!data.vid || localStorage.getItem("vid")) return;
-        localStorage.setItem("vid", data.vid);
+        if (data.vid) {
+          localStorage.setItem("vid", data.vid);
+        }
       } catch {
         // Handle error if JSON parsing fails
       }
