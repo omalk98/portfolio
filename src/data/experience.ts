@@ -38,7 +38,7 @@ export interface Experience {
 export const experience: Experience[] = [
   {
     company: "Calian Group LTD",
-    department: "Operational & Training Technologies (OTTS)",
+    department: "Operational & Training Technology (OTT)",
     logo: {
       src: "/logo/calian.svg",
       bg: "light",
