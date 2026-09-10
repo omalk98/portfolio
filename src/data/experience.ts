@@ -38,12 +38,36 @@ export interface Experience {
 export const experience: Experience[] = [
   {
     company: "Calian Group LTD",
-    department: "Operational & Training Technology (OTT)",
+    department: "Operational & Training Technologies (COTTS)",
     logo: {
       src: "/logo/calian.svg",
       bg: "light",
     },
     role: [
+      
+      {{
+        title: "Front-End Software Developer (Network Team)",
+        highlights: [
+          "Designed, developed, and delivered NetBridge, a multicast-to-unicast networking product",
+          "Served as PO, coordinating internal integrations, client meetings, and server deployments",
+          "Continuing the development of new features while supporting product adoption and customer growth",
+        ],
+        duration: {
+          start: "Jul 2026",
+          end: "Present",
+        },
+      },
+        title: "Front-End Software Developer (GIS Team)",
+        highlights: [
+          "Contributed to the development of an in-house FlexGIS library using Leaflet and Pixi.js for military use",
+          "Developed geospatial calculation utilities based on open-source GIS resources",
+          "Designed a flexible mapping architecture to support alternative map engines and providers",
+        ],
+        duration: {
+          start: "Mar 2026",
+          end: "Jul 2026",
+        },
+      },
       {
         title: "Front-End Software Developer (Data Team)",
         highlights: [
@@ -53,7 +77,7 @@ export const experience: Experience[] = [
         ],
         duration: {
           start: "Jul 2025",
-          end: "Present",
+          end: "Mar 2026",
         },
       },
       {
