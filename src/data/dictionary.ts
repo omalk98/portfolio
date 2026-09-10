@@ -3,6 +3,7 @@ export const dictionary: Record<string, string> = {
   API: "Application Programming Interface",
   UI: "User Interface",
   UX: "User Experience",
+  PO: "Product Owner",
   DB: "Database",
   NATO: "North Atlantic Treaty Organization",
   SQL: "Structured Query Language",
