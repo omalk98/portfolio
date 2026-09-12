@@ -44,8 +44,7 @@ export const experience: Experience[] = [
       bg: "light",
     },
     role: [
-      
-      {{
+      {
         title: "Front-End Software Developer (Network Team)",
         highlights: [
           "Designed, developed, and delivered NetBridge, a multicast-to-unicast networking product",
@@ -57,6 +56,7 @@ export const experience: Experience[] = [
           end: "Present",
         },
       },
+      {
         title: "Front-End Software Developer (GIS Team)",
         highlights: [
           "Contributed to the development of an in-house FlexGIS library using Leaflet and Pixi.js for military use",

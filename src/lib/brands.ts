@@ -6,12 +6,12 @@ import {
   SiPhp,
   SiGnubash,
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiNodedotjs,
   SiReact,
   SiNextdotjs,
   SiVuedotjs,
-  SiNuxtdotjs,
+  SiNuxt,
   SiExpress,
   SiVite,
   SiRedux,
@@ -26,21 +26,17 @@ import {
   SiLinux,
   SiDocker,
   SiKubernetes,
-  SiAmazonwebservices,
   SiGooglecloud,
   SiVercel,
   SiFirebase,
   SiStripe,
-  SiTwilio,
   SiElastic,
   SiJenkins,
   SiMysql,
   SiPostgresql,
   SiSqlite,
   SiMongodb,
-  SiAmazondynamodb,
   SiRedis,
-  SiAmazons3,
   SiGit,
   SiGithub,
   SiBitbucket,
@@ -65,8 +61,9 @@ import {
   SiKalilinux,
   SiUbuntu,
 } from "react-icons/si";
-import { FaJava, FaWindows } from "react-icons/fa";
+import { FaJava, FaWindows, FaAws } from "react-icons/fa";
 import { VscAzure } from "react-icons/vsc";
+import { CgTwilio } from "react-icons/cg";
 
 // Languages
 export const javaScript = {
@@ -119,7 +116,7 @@ export const html = {
 
 export const css = {
   text: "CSS",
-  icon: SiCss3,
+  icon: SiCss,
   color: "#1572B6",
 };
 
@@ -156,7 +153,7 @@ export const vueJs = {
 
 export const nuxtJs = {
   text: "Nuxt.js",
-  icon: SiNuxtdotjs,
+  icon: SiNuxt,
   color: "#00DC82",
 };
 
@@ -305,7 +302,7 @@ export const kubernetes = {
 
 export const aws = {
   text: "AWS",
-  icon: SiAmazonwebservices,
+  icon: FaAws,
   color: "#FF9900",
 };
 
@@ -341,7 +338,7 @@ export const stripe = {
 
 export const twilio = {
   text: "Twilio",
-  icon: SiTwilio,
+  icon: CgTwilio,
   color: "#F22F46",
 };
 
@@ -390,7 +387,7 @@ export const mongoDB = {
 
 export const dynamoDB = {
   text: "DynamoDB",
-  icon: SiAmazondynamodb,
+  icon: undefined,
   color: "#4053D6",
 };
 
@@ -402,7 +399,7 @@ export const redis = {
 
 export const s3 = {
   text: "S3",
-  icon: SiAmazons3,
+  icon: undefined,
   color: "#569A31",
 };
 
