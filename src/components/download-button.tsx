@@ -17,6 +17,7 @@ const DownloadButton = ({
   className,
   tooltip,
   newWindow,
+  onDownload,
 }: {
   href: string;
   fileName: string;
@@ -24,6 +25,7 @@ const DownloadButton = ({
   className?: string;
   tooltip?: string | React.ReactNode;
   newWindow?: boolean;
+  onDownload?: () => void;
 }) => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
@@ -39,6 +41,7 @@ const DownloadButton = ({
   };
 
   const handleDownload = async () => {
+    onDownload?.();
     try {
       if (newWindow) {
         window.open(href, "_blank");

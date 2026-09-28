@@ -16,7 +16,7 @@ import { skills } from "@/data";
 import TechStackCard from "@/components/tech-stack-card";
 import StaggerList from "./components/stagger-list";
 import GlowListItem from "./components/glow-list-item";
-import { getMapPoints, track } from "./api";
+import { getMapPoints, trackEvent } from "./api";
 import { FaDesktop, FaMobile, FaServer } from "react-icons/fa";
 import AbbreviationHighlighter from "./components/abbreviation-highlighter";
 const WorldMap = lazy(() => import("./components/ui/world-map"));
@@ -40,15 +40,19 @@ export default function Portfolio() {
       </Suspense>
   ), [mapData]);
   useEffect(() => {
+    trackEvent("page_view");
     async function fetchData() {
-      track();
-      const mapPoints = await getMapPoints();
-      setMapData(
-        mapPoints.map((point) => ({
-          start: { lat: point.start.lat, lng: point.start.lng },
-          end: { lat: point.end.lat, lng: point.end.lng },
-        }))
-      );
+      try {
+        const mapPoints = await getMapPoints();
+        setMapData(
+          mapPoints.map((point) => ({
+            start: { lat: point.start.lat, lng: point.start.lng },
+            end: { lat: point.end.lat, lng: point.end.lng },
+          }))
+        );
+      } catch {
+        setMapData([]);
+      }
     }
     fetchData();
   }, []);
@@ -143,6 +147,7 @@ export default function Portfolio() {
               text='Download Resume'
               className='mx-auto'
               tooltip={<p>Hire Me!</p>}
+              onDownload={() => trackEvent("resume_download")}
             />
           </div>
 
@@ -156,6 +161,10 @@ export default function Portfolio() {
                   key={contact.label}
                   href={contact.href}
                   title={contact.label}
+                  onClick={() => {
+                    if (contact.label === "GitHub") trackEvent("github_click");
+                    if (contact.label === "LinkedIn") trackEvent("linkedin_click");
+                  }}
                   className='items-center gap-2 transition-all align-center inline-flex hover:scale-110 rounded-full p-2'
                 >
                   <contact.icon
@@ -382,8 +391,14 @@ export default function Portfolio() {
             },
           ]}
           renderComponent={(project) => (
-            <DetailCard
+            <motion.div
               key={project.title}
+              onViewportEnter={() =>
+                trackEvent("project_view", { project: project.title })
+              }
+              viewport={{ once: true }}
+            >
+              <DetailCard
               {...project}
               content={project.list.map((text) => (
                 <ul className='list-none space-y-2'>
@@ -392,7 +407,8 @@ export default function Portfolio() {
                   </li>
                 </ul>
               ))}
-            />
+              />
+            </motion.div>
           )}
         />
       </SectionWrapper>
@@ -451,6 +467,10 @@ export default function Portfolio() {
             >
               <LinkWrapper
                 href={contact.href}
+                onClick={() => {
+                  if (contact.label === "GitHub") trackEvent("github_click");
+                  if (contact.label === "LinkedIn") trackEvent("linkedin_click");
+                }}
                 className='h-full custom-hover-data-color'
                 style={{ "--data-color": contact.color }}
               >
