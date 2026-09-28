@@ -16,15 +16,13 @@ import { skills } from "@/data";
 import TechStackCard from "@/components/tech-stack-card";
 import StaggerList from "./components/stagger-list";
 import GlowListItem from "./components/glow-list-item";
-import { getMapPoints, trackEvent } from "./api";
+import { getMapCountries, mapCountriesToDots, trackEvent, type CountryVisit } from "./api";
 import { FaDesktop, FaMobile, FaServer } from "react-icons/fa";
 import AbbreviationHighlighter from "./components/abbreviation-highlighter";
 const WorldMap = lazy(() => import("./components/ui/world-map"));
 
 export default function Portfolio() {
-  const [mapData, setMapData] = useState<
-    { start: { lat: number; lng: number }; end: { lat: number; lng: number } }[]
-  >([]);
+  const [mapCountries, setMapCountries] = useState<CountryVisit[]>([]);
   const memoMapData = useMemo(() => (
     <Suspense
         fallback={
@@ -36,22 +34,16 @@ export default function Portfolio() {
           </div>
         }
       >
-        <WorldMap dots={mapData} />
+        <WorldMap dots={mapCountriesToDots(mapCountries)} countries={mapCountries} />
       </Suspense>
-  ), [mapData]);
+  ), [mapCountries]);
   useEffect(() => {
     trackEvent("page_view");
     async function fetchData() {
       try {
-        const mapPoints = await getMapPoints();
-        setMapData(
-          mapPoints.map((point) => ({
-            start: { lat: point.start.lat, lng: point.start.lng },
-            end: { lat: point.end.lat, lng: point.end.lng },
-          }))
-        );
+        setMapCountries(await getMapCountries());
       } catch {
-        setMapData([]);
+        setMapCountries([]);
       }
     }
     fetchData();
